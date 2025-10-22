@@ -1,0 +1,480 @@
+[0.000000] (-) TimerEvent: {}
+[0.001295] (handpose_publisher) JobQueued: {'identifier': 'handpose_publisher', 'dependencies': OrderedDict()}
+[0.001847] (handpose_visualizer) JobQueued: {'identifier': 'handpose_visualizer', 'dependencies': OrderedDict()}
+[0.002469] (handpose_publisher) JobStarted: {'identifier': 'handpose_publisher'}
+[0.017407] (handpose_visualizer) JobStarted: {'identifier': 'handpose_visualizer'}
+[0.026149] (handpose_publisher) JobProgress: {'identifier': 'handpose_publisher', 'progress': 'cmake'}
+[0.028029] (handpose_publisher) JobProgress: {'identifier': 'handpose_publisher', 'progress': 'build'}
+[0.029604] (handpose_publisher) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/yue/robot/build/handpose_publisher', '--', '-j6', '-l6'], 'cwd': '/home/yue/robot/build/handpose_publisher', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'yue'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/yue/robot/install/handpose_publisher/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/yue'), ('OLDPWD', '/home/yue'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1752'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/yue/robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'yue'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'yue'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/yue/robot/install/handpose_visualizer/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ultraleap/TrackingService/bin:/opt/ultraleap/TrackingService/bin'), ('SESSION_MANAGER', 'local/yue-desktop:@/tmp/.ICE-unix/1727,unix/yue-desktop:/tmp/.ICE-unix/1727'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/f5e01b24_c1d1_49bf_90e9_4429ccc18194'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.104'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/yue/robot/build/handpose_publisher'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_publisher/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble')]), 'shell': False}
+[0.098789] (-) TimerEvent: {}
+[0.168250] (handpose_publisher) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.198960] (-) TimerEvent: {}
+[0.299664] (-) TimerEvent: {}
+[0.400559] (-) TimerEvent: {}
+[0.476083] (handpose_publisher) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.500624] (-) TimerEvent: {}
+[0.546561] (handpose_publisher) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.551861] (handpose_publisher) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.564506] (handpose_publisher) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.586198] (handpose_publisher) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.600981] (-) TimerEvent: {}
+[0.618642] (handpose_publisher) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.701015] (-) TimerEvent: {}
+[0.701642] (handpose_publisher) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.706811] (handpose_publisher) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.801198] (-) TimerEvent: {}
+[0.901934] (-) TimerEvent: {}
+[0.932784] (handpose_publisher) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.002106] (-) TimerEvent: {}
+[1.039578] (handpose_publisher) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.066544] (handpose_publisher) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.102295] (-) TimerEvent: {}
+[1.203268] (-) TimerEvent: {}
+[1.304162] (-) TimerEvent: {}
+[1.318997] (handpose_visualizer) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/handpose_visualizer', 'build', '--build-base', '/home/yue/robot/build/handpose_visualizer/build', 'install', '--record', '/home/yue/robot/build/handpose_visualizer/install.log', '--single-version-externally-managed'], 'cwd': '/home/yue/robot/src/handpose_visualizer', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'yue', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/yue/robot/install/handpose_publisher/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/yue', 'OLDPWD': '/home/yue', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1752', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/yue/robot/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'yue', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'yue', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/yue/robot/install/handpose_visualizer/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ultraleap/TrackingService/bin:/opt/ultraleap/TrackingService/bin', 'SESSION_MANAGER': 'local/yue-desktop:@/tmp/.ICE-unix/1727,unix/yue-desktop:/tmp/.ICE-unix/1727', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/f5e01b24_c1d1_49bf_90e9_4429ccc18194', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.104', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/yue/robot/install/handpose_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yue/robot/build/handpose_visualizer', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yue/robot/build/handpose_visualizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_publisher/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/yue/robot/install/handpose_publisher'}, 'shell': False}
+[1.404321] (-) TimerEvent: {}
+[1.505047] (-) TimerEvent: {}
+[1.605756] (-) TimerEvent: {}
+[1.706499] (-) TimerEvent: {}
+[1.722833] (handpose_publisher) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.802496] (handpose_visualizer) StdoutLine: {'line': b'running egg_info\n'}
+[1.804859] (handpose_visualizer) StdoutLine: {'line': b'writing ../../build/handpose_visualizer/handpose_visualizer.egg-info/PKG-INFO\n'}
+[1.805935] (handpose_visualizer) StdoutLine: {'line': b'writing dependency_links to ../../build/handpose_visualizer/handpose_visualizer.egg-info/dependency_links.txt\n'}
+[1.806376] (handpose_visualizer) StdoutLine: {'line': b'writing entry points to ../../build/handpose_visualizer/handpose_visualizer.egg-info/entry_points.txt\n'}
+[1.806706] (-) TimerEvent: {}
+[1.807346] (handpose_visualizer) StdoutLine: {'line': b'writing requirements to ../../build/handpose_visualizer/handpose_visualizer.egg-info/requires.txt\n'}
+[1.807976] (handpose_visualizer) StdoutLine: {'line': b'writing top-level names to ../../build/handpose_visualizer/handpose_visualizer.egg-info/top_level.txt\n'}
+[1.813241] (handpose_visualizer) StdoutLine: {'line': b"reading manifest file '../../build/handpose_visualizer/handpose_visualizer.egg-info/SOURCES.txt'\n"}
+[1.813924] (handpose_visualizer) StdoutLine: {'line': b"writing manifest file '../../build/handpose_visualizer/handpose_visualizer.egg-info/SOURCES.txt'\n"}
+[1.814355] (handpose_visualizer) StdoutLine: {'line': b'running build\n'}
+[1.814544] (handpose_visualizer) StdoutLine: {'line': b'running build_py\n'}
+[1.815210] (handpose_visualizer) StdoutLine: {'line': b'running install\n'}
+[1.816003] (handpose_visualizer) StdoutLine: {'line': b'running install_lib\n'}
+[1.819253] (handpose_visualizer) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.823403] (handpose_visualizer) StdoutLine: {'line': b"removing '/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer-0.1.0-py3.10.egg-info' (and everything under it)\n"}
+[1.824082] (handpose_visualizer) StdoutLine: {'line': b'Copying ../../build/handpose_visualizer/handpose_visualizer.egg-info to /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer-0.1.0-py3.10.egg-info\n'}
+[1.826258] (handpose_visualizer) StdoutLine: {'line': b'running install_scripts\n'}
+[1.875645] (handpose_visualizer) StdoutLine: {'line': b'Installing handpose_visualizer script to /home/yue/robot/install/handpose_visualizer/bin\n'}
+[1.876605] (handpose_visualizer) StdoutLine: {'line': b"writing list of installed files to '/home/yue/robot/build/handpose_visualizer/install.log'\n"}
+[1.906887] (-) TimerEvent: {}
+[1.981317] (handpose_visualizer) CommandEnded: {'returncode': 0}
+[2.007396] (-) TimerEvent: {}
+[2.043967] (handpose_visualizer) JobEnded: {'identifier': 'handpose_visualizer', 'rc': 0}
+[2.107609] (-) TimerEvent: {}
+[2.208376] (-) TimerEvent: {}
+[2.309017] (-) TimerEvent: {}
+[2.410383] (-) TimerEvent: {}
+[2.511695] (-) TimerEvent: {}
+[2.612726] (-) TimerEvent: {}
+[2.624804] (handpose_publisher) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.712919] (-) TimerEvent: {}
+[2.813761] (-) TimerEvent: {}
+[2.914646] (-) TimerEvent: {}
+[3.015489] (-) TimerEvent: {}
+[3.065476] (handpose_publisher) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.115663] (-) TimerEvent: {}
+[3.177843] (handpose_publisher) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[3.215836] (-) TimerEvent: {}
+[3.236324] (handpose_publisher) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[3.237045] (handpose_publisher) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[3.237372] (handpose_publisher) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[3.316037] (-) TimerEvent: {}
+[3.319901] (handpose_publisher) StdoutLine: {'line': b'-- LEAP_INCLUDE = /usr/include\n'}
+[3.320451] (handpose_publisher) StdoutLine: {'line': b'-- LEAP_LIBDIR  = /opt/ultraleap/LeapSDK/lib\n'}
+[3.320739] (handpose_publisher) StdoutLine: {'line': b'-- Found LeapC include: /opt/ultraleap/LeapSDK/include\n'}
+[3.320947] (handpose_publisher) StdoutLine: {'line': b'-- Found LeapC library: /opt/ultraleap/LeapSDK/lib/libLeapC.so\n'}
+[3.342279] (handpose_publisher) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.416209] (-) TimerEvent: {}
+[3.449359] (handpose_publisher) StdoutLine: {'line': b'-- Generating done\n'}
+[3.479271] (handpose_publisher) StdoutLine: {'line': b'-- Build files have been written to: /home/yue/robot/build/handpose_publisher\n'}
+[3.516394] (-) TimerEvent: {}
+[3.555023] (handpose_publisher) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[3.582944] (handpose_publisher) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[3.601171] (handpose_publisher) StdoutLine: {'line': b'[  6%] Built target ament_cmake_python_copy_handpose_publisher\n'}
+[3.616675] (-) TimerEvent: {}
+[3.717396] (-) TimerEvent: {}
+[3.818053] (-) TimerEvent: {}
+[3.918776] (-) TimerEvent: {}
+[4.019474] (-) TimerEvent: {}
+[4.102307] (handpose_publisher) StdoutLine: {'line': b'running egg_info\n'}
+[4.105057] (handpose_publisher) StdoutLine: {'line': b'writing handpose_publisher.egg-info/PKG-INFO\n'}
+[4.106905] (handpose_publisher) StdoutLine: {'line': b'writing dependency_links to handpose_publisher.egg-info/dependency_links.txt\n'}
+[4.108078] (handpose_publisher) StdoutLine: {'line': b'writing top-level names to handpose_publisher.egg-info/top_level.txt\n'}
+[4.115192] (handpose_publisher) StdoutLine: {'line': b"reading manifest file 'handpose_publisher.egg-info/SOURCES.txt'\n"}
+[4.117450] (handpose_publisher) StdoutLine: {'line': b"writing manifest file 'handpose_publisher.egg-info/SOURCES.txt'\n"}
+[4.119541] (-) TimerEvent: {}
+[4.207403] (handpose_publisher) StdoutLine: {'line': b'[  6%] Built target ament_cmake_python_build_handpose_publisher_egg\n'}
+[4.219789] (-) TimerEvent: {}
+[4.265394] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_generator_c\x1b[0m\n'}
+[4.280564] (handpose_publisher) StdoutLine: {'line': b'[  6%] Built target handpose_publisher__cpp\n'}
+[4.292292] (handpose_publisher) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/handpose_publisher__rosidl_generator_c.dir/rosidl_generator_c/handpose_publisher/msg/detail/hand_flange__functions.c.o\x1b[0m\n'}
+[4.300354] (handpose_publisher) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[4.307189] (handpose_publisher) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[4.314406] (handpose_publisher) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.319945] (-) TimerEvent: {}
+[4.420690] (-) TimerEvent: {}
+[4.481324] (handpose_publisher) StdoutLine: {'line': b'[ 21%] \x1b[32m\x1b[1mLinking C shared library libhandpose_publisher__rosidl_generator_c.so\x1b[0m\n'}
+[4.520840] (-) TimerEvent: {}
+[4.584382] (handpose_publisher) StdoutLine: {'line': b'[ 21%] Built target handpose_publisher__rosidl_generator_c\n'}
+[4.615565] (handpose_publisher) StdoutLine: {'line': b'[ 24%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.621023] (-) TimerEvent: {}
+[4.646326] (handpose_publisher) StdoutLine: {'line': b'[ 27%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[4.662063] (handpose_publisher) StdoutLine: {'line': b'[ 30%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[4.721203] (-) TimerEvent: {}
+[4.821845] (-) TimerEvent: {}
+[4.922631] (-) TimerEvent: {}
+[5.023181] (-) TimerEvent: {}
+[5.032041] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_cpp\x1b[0m\n'}
+[5.038660] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[5.066293] (handpose_publisher) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/handpose_publisher__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/handpose_publisher/msg/hand_flange__type_support.cpp.o\x1b[0m\n'}
+[5.123339] (-) TimerEvent: {}
+[5.132692] (handpose_publisher) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/handpose_publisher__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/handpose_publisher/msg/detail/hand_flange__type_support.cpp.o\x1b[0m\n'}
+[5.223512] (-) TimerEvent: {}
+[5.324187] (-) TimerEvent: {}
+[5.341215] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[5.371736] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_c\x1b[0m\n'}
+[5.391815] (handpose_publisher) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/handpose_publisher__rosidl_typesupport_c.dir/rosidl_typesupport_c/handpose_publisher/msg/hand_flange__type_support.cpp.o\x1b[0m\n'}
+[5.411861] (handpose_publisher) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/handpose_publisher__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/handpose_publisher/msg/detail/dds_fastrtps/hand_flange__type_support.cpp.o\x1b[0m\n'}
+[5.424378] (-) TimerEvent: {}
+[5.426540] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[5.454714] (handpose_publisher) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/handpose_publisher__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/handpose_publisher/msg/detail/hand_flange__type_support_c.cpp.o\x1b[0m\n'}
+[5.524572] (-) TimerEvent: {}
+[5.575679] (handpose_publisher) StdoutLine: {'line': b'[ 48%] \x1b[32m\x1b[1mLinking CXX shared library libhandpose_publisher__rosidl_typesupport_c.so\x1b[0m\n'}
+[5.624781] (-) TimerEvent: {}
+[5.719421] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[5.724979] (-) TimerEvent: {}
+[5.770557] (handpose_publisher) StdoutLine: {'line': b'[ 48%] Built target handpose_publisher__rosidl_typesupport_c\n'}
+[5.785345] (handpose_publisher) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding C object CMakeFiles/handpose_publisher__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/handpose_publisher/msg/detail/hand_flange__type_support.c.o\x1b[0m\n'}
+[5.825170] (-) TimerEvent: {}
+[5.926042] (-) TimerEvent: {}
+[6.004259] (handpose_publisher) StdoutLine: {'line': b'[ 54%] \x1b[32m\x1b[1mLinking C shared library libhandpose_publisher__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[6.026189] (-) TimerEvent: {}
+[6.116295] (handpose_publisher) StdoutLine: {'line': b'[ 57%] \x1b[32m\x1b[1mLinking CXX shared library libhandpose_publisher__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[6.126569] (-) TimerEvent: {}
+[6.135769] (handpose_publisher) StdoutLine: {'line': b'[ 57%] Built target handpose_publisher__rosidl_typesupport_introspection_c\n'}
+[6.216311] (handpose_publisher) StdoutLine: {'line': b'[ 57%] Built target handpose_publisher__rosidl_typesupport_cpp\n'}
+[6.226885] (-) TimerEvent: {}
+[6.234613] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target leap_handpose_publisher\x1b[0m\n'}
+[6.277000] (handpose_publisher) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/leap_handpose_publisher.dir/src/leap_handpose_publisher.cpp.o\x1b[0m\n'}
+[6.327068] (-) TimerEvent: {}
+[6.389283] (handpose_publisher) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking CXX shared library libhandpose_publisher__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[6.427248] (-) TimerEvent: {}
+[6.442273] (handpose_publisher) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX shared library libhandpose_publisher__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[6.527591] (-) TimerEvent: {}
+[6.610920] (handpose_publisher) StdoutLine: {'line': b'[ 66%] Built target handpose_publisher__rosidl_typesupport_fastrtps_c\n'}
+[6.628218] (-) TimerEvent: {}
+[6.636082] (handpose_publisher) StdoutLine: {'line': b'[ 66%] Built target handpose_publisher__rosidl_typesupport_introspection_cpp\n'}
+[6.728395] (-) TimerEvent: {}
+[6.746348] (handpose_publisher) StdoutLine: {'line': b'[ 69%] \x1b[32m\x1b[1mLinking CXX shared library libhandpose_publisher__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[6.828553] (-) TimerEvent: {}
+[6.929145] (-) TimerEvent: {}
+[6.976082] (handpose_publisher) StdoutLine: {'line': b'[ 69%] Built target handpose_publisher__rosidl_typesupport_fastrtps_cpp\n'}
+[7.021888] (handpose_publisher) StdoutLine: {'line': b'[ 69%] Built target handpose_publisher\n'}
+[7.029310] (-) TimerEvent: {}
+[7.065731] (handpose_publisher) StdoutLine: {'line': b'[ 72%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[7.129763] (-) TimerEvent: {}
+[7.230304] (-) TimerEvent: {}
+[7.330862] (-) TimerEvent: {}
+[7.431599] (-) TimerEvent: {}
+[7.532296] (-) TimerEvent: {}
+[7.632948] (-) TimerEvent: {}
+[7.733694] (-) TimerEvent: {}
+[7.834414] (-) TimerEvent: {}
+[7.896927] (handpose_publisher) StdoutLine: {'line': b'[ 72%] Built target handpose_publisher__py\n'}
+[7.934667] (-) TimerEvent: {}
+[7.941671] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_generator_py\x1b[0m\n'}
+[7.968304] (handpose_publisher) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding C object CMakeFiles/handpose_publisher__rosidl_generator_py.dir/rosidl_generator_py/handpose_publisher/msg/_hand_flange_s.c.o\x1b[0m\n'}
+[8.034867] (-) TimerEvent: {}
+[8.135871] (-) TimerEvent: {}
+[8.214953] (handpose_publisher) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/handpose_publisher/libhandpose_publisher__rosidl_generator_py.so\x1b[0m\n'}
+[8.236049] (-) TimerEvent: {}
+[8.315894] (handpose_publisher) StdoutLine: {'line': b'[ 78%] Built target handpose_publisher__rosidl_generator_py\n'}
+[8.336245] (-) TimerEvent: {}
+[8.337386] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[8.343231] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[8.351912] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[8.373510] (handpose_publisher) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding C object CMakeFiles/handpose_publisher__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/handpose_publisher/_handpose_publisher_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[8.384565] (handpose_publisher) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/handpose_publisher__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/handpose_publisher/_handpose_publisher_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[8.436443] (-) TimerEvent: {}
+[8.443262] (handpose_publisher) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/handpose_publisher__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/handpose_publisher/_handpose_publisher_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[8.536654] (-) TimerEvent: {}
+[8.637381] (-) TimerEvent: {}
+[8.689726] (handpose_publisher) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/handpose_publisher/handpose_publisher_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[8.695946] (handpose_publisher) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/handpose_publisher/handpose_publisher_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[8.710342] (handpose_publisher) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/handpose_publisher/handpose_publisher_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[8.737545] (-) TimerEvent: {}
+[8.777221] (handpose_publisher) StdoutLine: {'line': b'[ 96%] Built target handpose_publisher__rosidl_typesupport_introspection_c__pyext\n'}
+[8.781616] (handpose_publisher) StdoutLine: {'line': b'[ 96%] Built target handpose_publisher__rosidl_typesupport_fastrtps_c__pyext\n'}
+[8.785196] (handpose_publisher) StdoutLine: {'line': b'[ 96%] Built target handpose_publisher__rosidl_typesupport_c__pyext\n'}
+[8.837709] (-) TimerEvent: {}
+[8.938378] (-) TimerEvent: {}
+[9.039137] (-) TimerEvent: {}
+[9.139905] (-) TimerEvent: {}
+[9.240903] (-) TimerEvent: {}
+[9.342467] (-) TimerEvent: {}
+[9.443194] (-) TimerEvent: {}
+[9.543916] (-) TimerEvent: {}
+[9.644637] (-) TimerEvent: {}
+[9.745396] (-) TimerEvent: {}
+[9.846180] (-) TimerEvent: {}
+[9.947163] (-) TimerEvent: {}
+[10.049891] (-) TimerEvent: {}
+[10.150744] (-) TimerEvent: {}
+[10.251499] (-) TimerEvent: {}
+[10.352346] (-) TimerEvent: {}
+[10.453126] (-) TimerEvent: {}
+[10.553862] (-) TimerEvent: {}
+[10.654678] (-) TimerEvent: {}
+[10.755448] (-) TimerEvent: {}
+[10.856193] (-) TimerEvent: {}
+[10.956945] (-) TimerEvent: {}
+[11.057958] (-) TimerEvent: {}
+[11.158762] (-) TimerEvent: {}
+[11.259520] (-) TimerEvent: {}
+[11.360221] (-) TimerEvent: {}
+[11.460970] (-) TimerEvent: {}
+[11.561727] (-) TimerEvent: {}
+[11.662558] (-) TimerEvent: {}
+[11.689942] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kn_arm\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[11.690729] (handpose_publisher) StderrLine: {'line': b'  116 |         rodrigues_rotate(\x1b[01;31m\x1b[Kn_arm\x1b[m\x1b[K,axis,ANGLE_DEG*M_PI/180.0,cand_plus); rodrigues_rotate(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.690939] (handpose_publisher) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[11.691080] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kaxis\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[11.691209] (handpose_publisher) StderrLine: {'line': b'  116 |         rodrigues_rotate(n_arm,\x1b[01;31m\x1b[Kaxis\x1b[m\x1b[K,ANGLE_DEG*M_PI/180.0,cand_plus); rodrigues_rotate(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.691330] (handpose_publisher) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.691449] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KANGLE_DEG\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.691583] (handpose_publisher) StderrLine: {'line': b'  116 |         rodrigues_rotate(n_arm,axis,\x1b[01;31m\x1b[KANGLE_DEG\x1b[m\x1b[K*M_PI/180.0,cand_plus); rodrigues_rotate(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.691696] (handpose_publisher) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.691816] (handpose_publisher) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/11/cmath:45\x1b[m\x1b[K,\n'}
+[11.691930] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp:18\x1b[m\x1b[K,\n'}
+[11.692084] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:24\x1b[m\x1b[K,\n'}
+[11.692198] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[11.692312] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[11.692425] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[11.692536] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[11.692645] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[11.692755] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[11.692860] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[11.692994] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[11.693108] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[11.693213] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[11.693323] (handpose_publisher) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:1\x1b[m\x1b[K:\n'}
+[11.693428] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[11.693543] (handpose_publisher) StderrLine: {'line': b'  116 |         rodrigues_rotate(n_arm,axis,ANGLE_DEG*\x1b[01;31m\x1b[KM_PI\x1b[m\x1b[K/180.0,cand_plus); rodrigues_rotate(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.693651] (handpose_publisher) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.693756] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[KISO C++ forbids declaration of \xe2\x80\x98\x1b[01m\x1b[Krodrigues_rotate\x1b[m\x1b[K\xe2\x80\x99 with no type [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.693904] (handpose_publisher) StderrLine: {'line': b'  116 |         \x1b[01;31m\x1b[Krodrigues_rotate\x1b[m\x1b[K(n_arm,axis,ANGLE_DEG*M_PI/180.0,cand_plus); rodrigues_rotate(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.694016] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.694128] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:87:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kn_arm\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[11.694301] (handpose_publisher) StderrLine: {'line': b'  116 | _arm,axis,ANGLE_DEG*M_PI/180.0,cand_plus); rodrigues_rotate(\x1b[01;31m\x1b[Kn_arm\x1b[m\x1b[K,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.694446] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[11.694559] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.694670] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:93:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kaxis\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[11.694779] (handpose_publisher) StderrLine: {'line': b'  116 | xis,ANGLE_DEG*M_PI/180.0,cand_plus); rodrigues_rotate(n_arm,\x1b[01;31m\x1b[Kaxis\x1b[m\x1b[K,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.694889] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.694991] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.695932] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:98:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before \xe2\x80\x98\x1b[01m\x1b[K-\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[11.696263] (handpose_publisher) StderrLine: {'line': b'  116 | NGLE_DEG*M_PI/180.0,cand_plus); rodrigues_rotate(n_arm,axis,\x1b[01;31m\x1b[K-\x1b[m\x1b[KANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.696404] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[11.696524] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.696637] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:98:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K-\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[11.696862] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:70:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[KISO C++ forbids declaration of \xe2\x80\x98\x1b[01m\x1b[Krodrigues_rotate\x1b[m\x1b[K\xe2\x80\x99 with no type [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.696991] (handpose_publisher) StderrLine: {'line': b'  116 | odrigues_rotate(n_arm,axis,ANGLE_DEG*M_PI/180.0,cand_plus); \x1b[01;31m\x1b[Krodrigues_rotate\x1b[m\x1b[K(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(cand_minus);\n'}
+[11.697105] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.697217] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.697326] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:144:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcand_plus\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.697434] (handpose_publisher) StderrLine: {'line': b'  116 | te(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(\x1b[01;31m\x1b[Kcand_plus\x1b[m\x1b[K); vnormalize(cand_minus);\n'}
+[11.697591] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.697705] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.697831] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:133:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[KISO C++ forbids declaration of \xe2\x80\x98\x1b[01m\x1b[Kvnormalize\x1b[m\x1b[K\xe2\x80\x99 with no type [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.697948] (handpose_publisher) StderrLine: {'line': b'  116 | rigues_rotate(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); \x1b[01;31m\x1b[Kvnormalize\x1b[m\x1b[K(cand_plus); vnormalize(cand_minus);\n'}
+[11.698058] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.698165] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.698336] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:167:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcand_minus\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.698462] (handpose_publisher) StderrLine: {'line': b'  116 | G*M_PI/180.0,cand_minus); vnormalize(cand_plus); vnormalize(\x1b[01;31m\x1b[Kcand_minus\x1b[m\x1b[K);\n'}
+[11.698573] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.698681] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.698786] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:156:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[KISO C++ forbids declaration of \xe2\x80\x98\x1b[01m\x1b[Kvnormalize\x1b[m\x1b[K\xe2\x80\x99 with no type [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.698900] (handpose_publisher) StderrLine: {'line': b'  116 | s,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(cand_plus); \x1b[01;31m\x1b[Kvnormalize\x1b[m\x1b[K(cand_minus);\n'}
+[11.699010] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.699146] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.699255] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:156:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99 cannot be overloaded with \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.699369] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:133:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kprevious declaration \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.699481] (handpose_publisher) StderrLine: {'line': b'  116 | rigues_rotate(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); \x1b[01;36m\x1b[Kvnormalize\x1b[m\x1b[K(cand_plus); vnormalize(cand_minus);\n'}
+[11.699614] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.699724] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.699830] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:117:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kif\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.700034] (handpose_publisher) StderrLine: {'line': b'  117 |         \x1b[01;31m\x1b[Kif\x1b[m\x1b[K(vdot(cand_plus,arm_fwd)>=vdot(cand_minus,arm_fwd)) vcopy(cand_plus,chosen); else vcopy(cand_minus,chosen);\n'}
+[11.700182] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[11.700298] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:117:88:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[Kelse\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.700409] (handpose_publisher) StderrLine: {'line': b'  117 | rm_fwd)>=vdot(cand_minus,arm_fwd)) vcopy(cand_plus,chosen); \x1b[01;31m\x1b[Kelse\x1b[m\x1b[K vcopy(cand_minus,chosen);\n'}
+[11.700520] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.700629] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.700736] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:119:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kaxis\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[11.700843] (handpose_publisher) StderrLine: {'line': b'  119 |         double R[3][3]; build_rotation_from_axis_chosen(\x1b[01;31m\x1b[Kaxis\x1b[m\x1b[K,chosen,R);\n'}
+[11.700953] (handpose_publisher) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.701060] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:119:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kchosen\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.701167] (handpose_publisher) StderrLine: {'line': b'  119 |         double R[3][3]; build_rotation_from_axis_chosen(axis,\x1b[01;31m\x1b[Kchosen\x1b[m\x1b[K,R);\n'}
+[11.701274] (handpose_publisher) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[11.701379] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:119:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KR\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.701506] (handpose_publisher) StderrLine: {'line': b'  119 |         double R[3][3]; build_rotation_from_axis_chosen(axis,chosen,\x1b[01;31m\x1b[KR\x1b[m\x1b[K);\n'}
+[11.701618] (handpose_publisher) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[11.701724] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:119:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[KISO C++ forbids declaration of \xe2\x80\x98\x1b[01m\x1b[Kbuild_rotation_from_axis_chosen\x1b[m\x1b[K\xe2\x80\x99 with no type [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.701841] (handpose_publisher) StderrLine: {'line': b'  119 |         double R[3][3]; \x1b[01;31m\x1b[Kbuild_rotation_from_axis_chosen\x1b[m\x1b[K(axis,chosen,R);\n'}
+[11.701944] (handpose_publisher) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.702051] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:120:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KR\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.702155] (handpose_publisher) StderrLine: {'line': b'  120 |         double rx,ry,rz; rotmat_to_euler_zyx(\x1b[01;31m\x1b[KR\x1b[m\x1b[K,rx,ry,rz);\n'}
+[11.702308] (handpose_publisher) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[11.702427] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:120:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Krx\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.702567] (handpose_publisher) StderrLine: {'line': b'  120 |         double rx,ry,rz; rotmat_to_euler_zyx(R,\x1b[01;31m\x1b[Krx\x1b[m\x1b[K,ry,rz);\n'}
+[11.702677] (handpose_publisher) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[11.702785] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:120:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kry\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.702899] (handpose_publisher) StderrLine: {'line': b'  120 |         double rx,ry,rz; rotmat_to_euler_zyx(R,rx,\x1b[01;31m\x1b[Kry\x1b[m\x1b[K,rz);\n'}
+[11.703078] (handpose_publisher) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[11.703219] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:120:54:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Krz\x1b[m\x1b[K\xe2\x80\x99 is not a type\n'}
+[11.703360] (handpose_publisher) StderrLine: {'line': b'  120 |         double rx,ry,rz; rotmat_to_euler_zyx(R,rx,ry,\x1b[01;31m\x1b[Krz\x1b[m\x1b[K);\n'}
+[11.703469] (handpose_publisher) StderrLine: {'line': b'      |                                                      \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[11.703580] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:120:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[KISO C++ forbids declaration of \xe2\x80\x98\x1b[01m\x1b[Krotmat_to_euler_zyx\x1b[m\x1b[K\xe2\x80\x99 with no type [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.703695] (handpose_publisher) StderrLine: {'line': b'  120 |         double rx,ry,rz; \x1b[01;31m\x1b[Krotmat_to_euler_zyx\x1b[m\x1b[K(R,rx,ry,rz);\n'}
+[11.703826] (handpose_publisher) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.703939] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:125:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Knon-static data member declared with placeholder \xe2\x80\x98\x1b[01m\x1b[Kauto\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.704053] (handpose_publisher) StderrLine: {'line': b'  125 |         \x1b[01;31m\x1b[Kauto\x1b[m\x1b[K msg_out=handpose_publisher::msg::HandFlange();\n'}
+[11.704159] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.704266] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:126:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.704561] (handpose_publisher) StderrLine: {'line': b'  126 |         \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.header.stamp=this->now();\n'}
+[11.704689] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.704805] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:127:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.704923] (handpose_publisher) StderrLine: {'line': b'  127 |         \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.header.frame_id="piper_base";\n'}
+[11.705035] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.707554] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:128:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.707974] (handpose_publisher) StderrLine: {'line': b'  128 |         \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.hand_id=(int64_t)hand->id;\n'}
+[11.708592] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.713239] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:129:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.713734] (handpose_publisher) StderrLine: {'line': b'  129 |         \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.frame_id=te->tracking_frame_id;\n'}
+[11.713895] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.717477] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:130:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.717929] (handpose_publisher) StderrLine: {'line': b'  130 |         \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.x=pos[0]; msg_out.y=pos[1]; msg_out.z=pos[2];\n'}
+[11.718091] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.720409] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:130:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.720682] (handpose_publisher) StderrLine: {'line': b'  130 |         msg_out.x=pos[0]; \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.y=pos[1]; msg_out.z=pos[2];\n'}
+[11.720827] (handpose_publisher) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.722385] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:130:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.722558] (handpose_publisher) StderrLine: {'line': b'  130 |         msg_out.x=pos[0]; msg_out.y=pos[1]; \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.z=pos[2];\n'}
+[11.722681] (handpose_publisher) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.724469] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:131:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.724713] (handpose_publisher) StderrLine: {'line': b'  131 |         \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.rx_millideg=RX_md; msg_out.ry_millideg=RY_md; msg_out.rz_millideg=RZ_md;\n'}
+[11.724853] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.726596] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:131:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.726866] (handpose_publisher) StderrLine: {'line': b'  131 |         msg_out.rx_millideg=RX_md; \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.ry_millideg=RY_md; msg_out.rz_millideg=RZ_md;\n'}
+[11.727014] (handpose_publisher) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.728710] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:131:63:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.729040] (handpose_publisher) StderrLine: {'line': b'  131 |       msg_out.rx_millideg=RX_md; msg_out.ry_millideg=RY_md; \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.rz_millideg=RZ_md;\n'}
+[11.729186] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.729311] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.731311] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:132:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg_out\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.731606] (handpose_publisher) StderrLine: {'line': b'  132 |         \x1b[01;31m\x1b[Kmsg_out\x1b[m\x1b[K.pinch_strength=hand->pinch_strength;\n'}
+[11.731747] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.733332] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:134:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.733576] (handpose_publisher) StderrLine: {'line': b'  134 |         \x1b[01;31m\x1b[Kpub_\x1b[m\x1b[K->publish(msg_out);\n'}
+[11.733705] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.752516] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KLeapPublisherNode::LeapPublisherNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[11.753066] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:75:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[11.753231] (handpose_publisher) StderrLine: {'line': b'   75 |         \x1b[01;31m\x1b[Kpub_\x1b[m\x1b[K=this->create_publisher<handpose_publisher::msg::HandFlange>("handpose/flange",10);\n'}
+[11.753362] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.762731] (-) TimerEvent: {}
+[11.779421] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:80:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktimer_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Ktimer_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[11.779964] (handpose_publisher) StderrLine: {'line': b'   80 |         \x1b[01;31m\x1b[Ktimer_\x1b[m\x1b[K=this->create_wall_timer(10ms,std::bind(&LeapPublisherNode::loop,this));\n'}
+[11.780131] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[11.780262] (handpose_publisher) StderrLine: {'line': b'      |         \x1b[32m\x1b[Ktimer_t\x1b[m\x1b[K\n'}
+[11.814954] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LeapPublisherNode::loop()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[11.815918] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:107:143:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid conversion from \xe2\x80\x98\x1b[01m\x1b[Kdouble*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.816182] (handpose_publisher) StderrLine: {'line': b'  107 | ap_dir_leap_to_arm(&hand->palm.direction,d_arm); vnormalize(\x1b[01;31m\x1b[Kn_arm\x1b[m\x1b[K); vnormalize(d_arm);\n'}
+[11.816347] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[11.816476] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[11.816600] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[Kdouble*\x1b[m\x1b[K\n'}
+[11.816715] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.816823] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:144:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.816941] (handpose_publisher) StderrLine: {'line': b'  116 | te(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(\x1b[01;36m\x1b[Kcand_plus\x1b[m\x1b[K); vnormalize(cand_minus);\n'}
+[11.817050] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.817162] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.817266] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:107:162:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid conversion from \xe2\x80\x98\x1b[01m\x1b[Kdouble*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.817381] (handpose_publisher) StderrLine: {'line': b'  107 | arm(&hand->palm.direction,d_arm); vnormalize(n_arm); vnormalize(\x1b[01;31m\x1b[Kd_arm\x1b[m\x1b[K);\n'}
+[11.817488] (handpose_publisher) StderrLine: {'line': b'      |                                                                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[11.817595] (handpose_publisher) StderrLine: {'line': b'      |                                                                 \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[11.817709] (handpose_publisher) StderrLine: {'line': b'      |                                                                 \x1b[01;31m\x1b[Kdouble*\x1b[m\x1b[K\n'}
+[11.817820] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.817925] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:144:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.818035] (handpose_publisher) StderrLine: {'line': b'  116 | te(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(\x1b[01;36m\x1b[Kcand_plus\x1b[m\x1b[K); vnormalize(cand_minus);\n'}
+[11.818145] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.818292] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.818495] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:110:186:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid conversion from \xe2\x80\x98\x1b[01m\x1b[Kdouble*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.818717] (handpose_publisher) StderrLine: {'line': b'  110 | _joint,arm_next); vsub(arm_next,arm_prev,arm_fwd); vnormalize(\x1b[01;31m\x1b[Karm_fwd\x1b[m\x1b[K);\n'}
+[11.818845] (handpose_publisher) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[11.818966] (handpose_publisher) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[11.819102] (handpose_publisher) StderrLine: {'line': b'      |                                                               \x1b[01;31m\x1b[Kdouble*\x1b[m\x1b[K\n'}
+[11.819215] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.819323] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:144:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.820003] (handpose_publisher) StderrLine: {'line': b'  116 | te(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(\x1b[01;36m\x1b[Kcand_plus\x1b[m\x1b[K); vnormalize(cand_minus);\n'}
+[11.820201] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.820325] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.820518] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:113:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid conversion from \xe2\x80\x98\x1b[01m\x1b[Kdouble*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.820657] (handpose_publisher) StderrLine: {'line': b'  113 |    double axis[3]; vcross(n_arm,d_arm,axis); if(!vnormalize(\x1b[01;31m\x1b[Kaxis\x1b[m\x1b[K)){vcross(n_arm,arm_fwd,axis); if(!vnormalize(axis)){double cand[3]={1.0,0.0,0.0}; if(std::fabs(vdot(cand,n_arm))>0.9){cand[0]=0.0; cand[1]=1.0; cand[2]=0.0;} vcross(n_arm,cand,axis); if(!vnormalize(axis)){axis[0]=1.0; axis[1]=0.0; axis[2]=0.0;}}}}\n'}
+[11.820808] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.820927] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[11.821039] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[Kdouble*\x1b[m\x1b[K\n'}
+[11.821147] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.821259] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:144:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.821379] (handpose_publisher) StderrLine: {'line': b'  116 | te(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(\x1b[01;36m\x1b[Kcand_plus\x1b[m\x1b[K); vnormalize(cand_minus);\n'}
+[11.821489] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.821597] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.821702] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:113:116:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid conversion from \xe2\x80\x98\x1b[01m\x1b[Kdouble*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.821818] (handpose_publisher) StderrLine: {'line': b'  113 | normalize(axis)){vcross(n_arm,arm_fwd,axis); if(!vnormalize(\x1b[01;31m\x1b[Kaxis\x1b[m\x1b[K)){double cand[3]={1.0,0.0,0.0}; if(std::fabs(vdot(cand,n_arm))>0.9){cand[0]=0.0; cand[1]=1.0; cand[2]=0.0;} vcross(n_arm,cand,axis); if(!vnormalize(axis)){axis[0]=1.0; axis[1]=0.0; axis[2]=0.0;}}}}\n'}
+[11.821962] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.822074] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[11.822180] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[Kdouble*\x1b[m\x1b[K\n'}
+[11.822314] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.822425] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:144:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.822534] (handpose_publisher) StderrLine: {'line': b'  116 | te(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(\x1b[01;36m\x1b[Kcand_plus\x1b[m\x1b[K); vnormalize(cand_minus);\n'}
+[11.822646] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.822755] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.822862] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:113:269:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid conversion from \xe2\x80\x98\x1b[01m\x1b[Kdouble*\x1b[m\x1b[K\xe2\x80\x99 to \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[11.822979] (handpose_publisher) StderrLine: {'line': b'  113 | =1.0; cand[2]=0.0;} vcross(n_arm,cand,axis); if(!vnormalize(\x1b[01;31m\x1b[Kaxis\x1b[m\x1b[K)){axis[0]=1.0; axis[1]=0.0; axis[2]=0.0;}}}}\n'}
+[11.823091] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[11.823196] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[11.823298] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;31m\x1b[Kdouble*\x1b[m\x1b[K\n'}
+[11.823440] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.823545] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:116:144:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  initializing argument 1 of \xe2\x80\x98\x1b[01m\x1b[Kint LeapPublisherNode::vnormalize(int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.823655] (handpose_publisher) StderrLine: {'line': b'  116 | te(n_arm,axis,-ANGLE_DEG*M_PI/180.0,cand_minus); vnormalize(\x1b[01;36m\x1b[Kcand_plus\x1b[m\x1b[K); vnormalize(cand_minus);\n'}
+[11.823762] (handpose_publisher) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.823865] (handpose_publisher) StderrLine: {'line': b'\n'}
+[11.823967] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:\x1b[m\x1b[K At global scope:\n'}
+[11.824103] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:137:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kspecializing member \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Publisher<handpose_publisher::msg::HandFlange_<std::allocator<void> >, std::allocator<void> >::SharedPtr\x1b[m\x1b[K\xe2\x80\x99 requires \xe2\x80\x98\x1b[01m\x1b[Ktemplate<>\x1b[m\x1b[K\xe2\x80\x99 syntax\n'}
+[11.824221] (handpose_publisher) StderrLine: {'line': b'  137 |     \x1b[01;31m\x1b[Krclcpp\x1b[m\x1b[K::Publisher<handpose_publisher::msg::HandFlange>::SharedPtr pub_;\n'}
+[11.824345] (handpose_publisher) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[11.824466] (handpose_publisher) StderrLine: {'line': b'\x1b[01m\x1b[K/home/yue/robot/src/handpose_publisher/src/leap_handpose_publisher.cpp:139:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected declaration before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[11.824582] (handpose_publisher) StderrLine: {'line': b'  139 | \x1b[01;31m\x1b[K}\x1b[m\x1b[K;\n'}
+[11.824689] (handpose_publisher) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[11.862931] (-) TimerEvent: {}
+[11.963729] (-) TimerEvent: {}
+[12.064500] (-) TimerEvent: {}
+[12.165224] (-) TimerEvent: {}
+[12.265938] (-) TimerEvent: {}
+[12.366699] (-) TimerEvent: {}
+[12.467434] (-) TimerEvent: {}
+[12.568209] (-) TimerEvent: {}
+[12.668979] (-) TimerEvent: {}
+[12.769764] (-) TimerEvent: {}
+[12.870532] (-) TimerEvent: {}
+[12.971486] (-) TimerEvent: {}
+[13.072237] (-) TimerEvent: {}
+[13.173056] (-) TimerEvent: {}
+[13.273813] (-) TimerEvent: {}
+[13.390590] (-) TimerEvent: {}
+[13.491279] (-) TimerEvent: {}
+[13.591978] (-) TimerEvent: {}
+[13.692691] (-) TimerEvent: {}
+[13.736836] (handpose_publisher) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/leap_handpose_publisher.dir/build.make:76: CMakeFiles/leap_handpose_publisher.dir/src/leap_handpose_publisher.cpp.o] Error 1\n'}
+[13.737695] (handpose_publisher) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:593: CMakeFiles/leap_handpose_publisher.dir/all] Error 2\n'}
+[13.738275] (handpose_publisher) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[13.742782] (handpose_publisher) CommandEnded: {'returncode': 2}
+[13.776352] (handpose_publisher) JobEnded: {'identifier': 'handpose_publisher', 'rc': 2}
+[13.780104] (-) EventReactorShutdown: {}

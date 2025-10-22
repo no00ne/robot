@@ -1,0 +1,31 @@
+[1.457s] Invoking command in '/home/yue/robot/src/handpose_visualizer': PYTHONPATH=/home/yue/robot/build/handpose_visualizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/handpose_visualizer build --build-base /home/yue/robot/build/handpose_visualizer/build install --record /home/yue/robot/build/handpose_visualizer/install.log --single-version-externally-managed
+[1.917s] running egg_info
+[1.918s] creating ../../build/handpose_visualizer/handpose_visualizer.egg-info
+[1.919s] writing ../../build/handpose_visualizer/handpose_visualizer.egg-info/PKG-INFO
+[1.919s] writing dependency_links to ../../build/handpose_visualizer/handpose_visualizer.egg-info/dependency_links.txt
+[1.920s] writing entry points to ../../build/handpose_visualizer/handpose_visualizer.egg-info/entry_points.txt
+[1.920s] writing requirements to ../../build/handpose_visualizer/handpose_visualizer.egg-info/requires.txt
+[1.920s] writing top-level names to ../../build/handpose_visualizer/handpose_visualizer.egg-info/top_level.txt
+[1.921s] writing manifest file '../../build/handpose_visualizer/handpose_visualizer.egg-info/SOURCES.txt'
+[1.924s] reading manifest file '../../build/handpose_visualizer/handpose_visualizer.egg-info/SOURCES.txt'
+[1.925s] writing manifest file '../../build/handpose_visualizer/handpose_visualizer.egg-info/SOURCES.txt'
+[1.926s] running build
+[1.926s] running build_py
+[1.926s] creating /home/yue/robot/build/handpose_visualizer/build
+[1.926s] creating /home/yue/robot/build/handpose_visualizer/build/lib
+[1.926s] creating /home/yue/robot/build/handpose_visualizer/build/lib/handpose_visualizer
+[1.926s] copying handpose_visualizer/__init__.py -> /home/yue/robot/build/handpose_visualizer/build/lib/handpose_visualizer
+[1.927s] copying handpose_visualizer/visualizer_node.py -> /home/yue/robot/build/handpose_visualizer/build/lib/handpose_visualizer
+[1.927s] running install
+[1.928s] running install_lib
+[1.929s] creating /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer
+[1.929s] copying /home/yue/robot/build/handpose_visualizer/build/lib/handpose_visualizer/__init__.py -> /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer
+[1.930s] copying /home/yue/robot/build/handpose_visualizer/build/lib/handpose_visualizer/visualizer_node.py -> /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer
+[1.931s] byte-compiling /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer/__init__.py to __init__.cpython-310.pyc
+[1.931s] byte-compiling /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer/visualizer_node.py to visualizer_node.cpython-310.pyc
+[1.931s] running install_egg_info
+[1.935s] Copying ../../build/handpose_visualizer/handpose_visualizer.egg-info to /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer-0.1.0-py3.10.egg-info
+[1.937s] running install_scripts
+[1.979s] Installing handpose_visualizer script to /home/yue/robot/install/handpose_visualizer/bin
+[1.980s] writing list of installed files to '/home/yue/robot/build/handpose_visualizer/install.log'
+[2.060s] Invoked command in '/home/yue/robot/src/handpose_visualizer' returned '0': PYTHONPATH=/home/yue/robot/build/handpose_visualizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/handpose_visualizer build --build-base /home/yue/robot/build/handpose_visualizer/build install --record /home/yue/robot/build/handpose_visualizer/install.log --single-version-externally-managed

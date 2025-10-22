@@ -1,0 +1,9 @@
+source;share/handpose_visualizer/hook/path.ps1
+source;share/handpose_visualizer/hook/path.dsv
+source;share/handpose_visualizer/hook/path.sh
+source;share/handpose_visualizer/hook/pythonpath.ps1
+source;share/handpose_visualizer/hook/pythonpath.dsv
+source;share/handpose_visualizer/hook/pythonpath.sh
+source;share/handpose_visualizer/hook/pythonscriptspath.ps1
+source;share/handpose_visualizer/hook/pythonscriptspath.dsv
+source;share/handpose_visualizer/hook/pythonscriptspath.sh

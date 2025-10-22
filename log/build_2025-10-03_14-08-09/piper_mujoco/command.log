@@ -1,0 +1,6 @@
+Invoking command in '/home/yue/robot/build/piper_mujoco': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/yue/robot/src/Piper_ros/src/piper_sim/piper_mujoco -DCMAKE_INSTALL_PREFIX=/home/yue/robot/install/piper_mujoco
+Invoked command in '/home/yue/robot/build/piper_mujoco' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/yue/robot/src/Piper_ros/src/piper_sim/piper_mujoco -DCMAKE_INSTALL_PREFIX=/home/yue/robot/install/piper_mujoco
+Invoking command in '/home/yue/robot/build/piper_mujoco': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/piper_mujoco -- -j6 -l6
+Invoked command in '/home/yue/robot/build/piper_mujoco' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/piper_mujoco -- -j6 -l6
+Invoking command in '/home/yue/robot/build/piper_mujoco': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/yue/robot/build/piper_mujoco
+Invoked command in '/home/yue/robot/build/piper_mujoco' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/yue/robot/build/piper_mujoco

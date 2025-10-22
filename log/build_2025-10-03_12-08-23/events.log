@@ -1,0 +1,12 @@
+[0.000000] (-) TimerEvent: {}
+[0.000960] (-) JobUnselected: {'identifier': 'handpose_publisher'}
+[0.001076] (-) JobUnselected: {'identifier': 'handpose_visualizer'}
+[0.001122] (-) JobUnselected: {'identifier': 'piper'}
+[0.001159] (-) JobUnselected: {'identifier': 'piper_description'}
+[0.001193] (-) JobUnselected: {'identifier': 'piper_gazebo'}
+[0.001231] (-) JobUnselected: {'identifier': 'piper_humble'}
+[0.002524] (-) JobUnselected: {'identifier': 'piper_msgs'}
+[0.002591] (-) JobUnselected: {'identifier': 'piper_mujoco'}
+[0.002633] (-) JobUnselected: {'identifier': 'piper_no_gripper_moveit'}
+[0.002670] (-) JobUnselected: {'identifier': 'piper_with_gripper_moveit'}
+[0.002708] (-) EventReactorShutdown: {}

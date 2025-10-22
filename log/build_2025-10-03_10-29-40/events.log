@@ -1,0 +1,507 @@
+[0.000000] (-) TimerEvent: {}
+[0.004271] (handpose_publisher) JobQueued: {'identifier': 'handpose_publisher', 'dependencies': OrderedDict()}
+[0.004551] (handpose_visualizer) JobQueued: {'identifier': 'handpose_visualizer', 'dependencies': OrderedDict()}
+[0.004609] (handpose_publisher) JobStarted: {'identifier': 'handpose_publisher'}
+[0.091151] (-) TimerEvent: {}
+[0.195495] (-) TimerEvent: {}
+[0.258141] (handpose_visualizer) JobStarted: {'identifier': 'handpose_visualizer'}
+[0.301272] (-) TimerEvent: {}
+[0.305792] (handpose_publisher) JobProgress: {'identifier': 'handpose_publisher', 'progress': 'cmake'}
+[0.341966] (handpose_publisher) JobProgress: {'identifier': 'handpose_publisher', 'progress': 'build'}
+[0.354658] (handpose_publisher) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/yue/robot/build/handpose_publisher', '--', '-j6', '-l6'], 'cwd': '/home/yue/robot/build/handpose_publisher', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'yue'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/yue/robot/install/handpose_publisher/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/yue'), ('OLDPWD', '/home/yue'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1729'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/yue/robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'yue'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'yue'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/yue/robot/install/handpose_visualizer/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ultraleap/TrackingService/bin:/opt/ultraleap/TrackingService/bin'), ('SESSION_MANAGER', 'local/yue-desktop:@/tmp/.ICE-unix/1701,unix/yue-desktop:/tmp/.ICE-unix/1701'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/1499903f_d173_4fcf_b0fc_213dd062f5a7'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.175'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/yue/robot/build/handpose_publisher'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_publisher/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble')]), 'shell': False}
+[0.403108] (-) TimerEvent: {}
+[0.503746] (-) TimerEvent: {}
+[0.604784] (-) TimerEvent: {}
+[0.705479] (-) TimerEvent: {}
+[0.849187] (-) TimerEvent: {}
+[0.950077] (-) TimerEvent: {}
+[1.051459] (-) TimerEvent: {}
+[1.156316] (-) TimerEvent: {}
+[1.257050] (-) TimerEvent: {}
+[1.357746] (-) TimerEvent: {}
+[1.458409] (-) TimerEvent: {}
+[1.559069] (-) TimerEvent: {}
+[1.659748] (-) TimerEvent: {}
+[1.760447] (-) TimerEvent: {}
+[1.868550] (-) TimerEvent: {}
+[1.973677] (-) TimerEvent: {}
+[2.074363] (-) TimerEvent: {}
+[2.175016] (-) TimerEvent: {}
+[2.278621] (-) TimerEvent: {}
+[2.380677] (-) TimerEvent: {}
+[2.481622] (-) TimerEvent: {}
+[2.582278] (-) TimerEvent: {}
+[2.701305] (-) TimerEvent: {}
+[2.802079] (-) TimerEvent: {}
+[2.902780] (-) TimerEvent: {}
+[3.032475] (-) TimerEvent: {}
+[3.144859] (-) TimerEvent: {}
+[3.245542] (-) TimerEvent: {}
+[3.346472] (-) TimerEvent: {}
+[3.447151] (-) TimerEvent: {}
+[3.548809] (-) TimerEvent: {}
+[3.658935] (-) TimerEvent: {}
+[3.763630] (-) TimerEvent: {}
+[3.864666] (-) TimerEvent: {}
+[3.966876] (-) TimerEvent: {}
+[4.067574] (-) TimerEvent: {}
+[4.175648] (-) TimerEvent: {}
+[4.337255] (-) TimerEvent: {}
+[4.564530] (-) TimerEvent: {}
+[4.665337] (-) TimerEvent: {}
+[4.766196] (-) TimerEvent: {}
+[4.870843] (-) TimerEvent: {}
+[4.998822] (-) TimerEvent: {}
+[5.112028] (-) TimerEvent: {}
+[5.267503] (-) TimerEvent: {}
+[5.370608] (-) TimerEvent: {}
+[5.473022] (-) TimerEvent: {}
+[5.577047] (-) TimerEvent: {}
+[5.722203] (-) TimerEvent: {}
+[5.942745] (-) TimerEvent: {}
+[6.175621] (-) TimerEvent: {}
+[6.386917] (-) TimerEvent: {}
+[6.575595] (-) TimerEvent: {}
+[6.787621] (-) TimerEvent: {}
+[6.914479] (-) TimerEvent: {}
+[7.016523] (-) TimerEvent: {}
+[7.149672] (-) TimerEvent: {}
+[7.250321] (-) TimerEvent: {}
+[7.350991] (-) TimerEvent: {}
+[7.453832] (-) TimerEvent: {}
+[7.559909] (-) TimerEvent: {}
+[7.702560] (-) TimerEvent: {}
+[7.820544] (-) TimerEvent: {}
+[7.959692] (-) TimerEvent: {}
+[8.060369] (-) TimerEvent: {}
+[8.184465] (-) TimerEvent: {}
+[8.285235] (-) TimerEvent: {}
+[8.388609] (-) TimerEvent: {}
+[8.491476] (-) TimerEvent: {}
+[8.550997] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_generator_c\x1b[0m\n'}
+[8.635080] (-) TimerEvent: {}
+[8.753426] (-) TimerEvent: {}
+[8.918912] (-) TimerEvent: {}
+[9.020733] (-) TimerEvent: {}
+[9.134690] (-) TimerEvent: {}
+[9.235297] (-) TimerEvent: {}
+[9.336737] (-) TimerEvent: {}
+[9.437415] (-) TimerEvent: {}
+[9.487682] (handpose_publisher) StdoutLine: {'line': b'[  3%] Built target handpose_publisher__cpp\n'}
+[9.537598] (-) TimerEvent: {}
+[9.638436] (-) TimerEvent: {}
+[9.739136] (-) TimerEvent: {}
+[9.840516] (-) TimerEvent: {}
+[9.941139] (-) TimerEvent: {}
+[10.140895] (-) TimerEvent: {}
+[10.246672] (-) TimerEvent: {}
+[10.347816] (-) TimerEvent: {}
+[10.452507] (-) TimerEvent: {}
+[10.556251] (-) TimerEvent: {}
+[10.604755] (handpose_publisher) StdoutLine: {'line': b'[  3%] Built target ament_cmake_python_copy_handpose_publisher\n'}
+[10.617902] (handpose_publisher) StdoutLine: {'line': b'[ 12%] Built target handpose_publisher__rosidl_generator_c\n'}
+[10.658966] (-) TimerEvent: {}
+[10.765020] (-) TimerEvent: {}
+[10.886737] (-) TimerEvent: {}
+[11.011569] (-) TimerEvent: {}
+[11.118609] (-) TimerEvent: {}
+[11.219554] (-) TimerEvent: {}
+[11.320703] (-) TimerEvent: {}
+[11.426843] (-) TimerEvent: {}
+[11.535615] (-) TimerEvent: {}
+[11.652538] (-) TimerEvent: {}
+[11.759683] (-) TimerEvent: {}
+[11.889595] (-) TimerEvent: {}
+[12.133365] (-) TimerEvent: {}
+[12.238205] (-) TimerEvent: {}
+[12.342158] (-) TimerEvent: {}
+[12.445076] (-) TimerEvent: {}
+[12.546221] (-) TimerEvent: {}
+[12.795473] (-) TimerEvent: {}
+[12.896240] (-) TimerEvent: {}
+[12.996927] (-) TimerEvent: {}
+[13.124997] (-) TimerEvent: {}
+[13.272014] (-) TimerEvent: {}
+[13.376583] (-) TimerEvent: {}
+[13.482221] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[13.528140] (-) TimerEvent: {}
+[13.631157] (-) TimerEvent: {}
+[13.741173] (-) TimerEvent: {}
+[13.846873] (-) TimerEvent: {}
+[13.951476] (-) TimerEvent: {}
+[14.052360] (-) TimerEvent: {}
+[14.153932] (-) TimerEvent: {}
+[14.258075] (-) TimerEvent: {}
+[14.358756] (-) TimerEvent: {}
+[14.461621] (-) TimerEvent: {}
+[14.577423] (-) TimerEvent: {}
+[14.692842] (-) TimerEvent: {}
+[14.818470] (-) TimerEvent: {}
+[14.929636] (-) TimerEvent: {}
+[15.072609] (-) TimerEvent: {}
+[15.186125] (-) TimerEvent: {}
+[15.289120] (-) TimerEvent: {}
+[15.390278] (-) TimerEvent: {}
+[15.496674] (-) TimerEvent: {}
+[15.645775] (-) TimerEvent: {}
+[15.767689] (-) TimerEvent: {}
+[15.931142] (-) TimerEvent: {}
+[16.035178] (-) TimerEvent: {}
+[16.143284] (-) TimerEvent: {}
+[16.247612] (-) TimerEvent: {}
+[16.360265] (-) TimerEvent: {}
+[16.468076] (-) TimerEvent: {}
+[16.606467] (-) TimerEvent: {}
+[16.712538] (-) TimerEvent: {}
+[16.813229] (-) TimerEvent: {}
+[16.914687] (-) TimerEvent: {}
+[16.977252] (handpose_publisher) StdoutLine: {'line': b'[ 21%] Built target handpose_publisher__rosidl_typesupport_introspection_cpp\n'}
+[17.014935] (-) TimerEvent: {}
+[17.130535] (-) TimerEvent: {}
+[17.231659] (-) TimerEvent: {}
+[17.332784] (-) TimerEvent: {}
+[17.437762] (-) TimerEvent: {}
+[17.586983] (-) TimerEvent: {}
+[17.687658] (-) TimerEvent: {}
+[17.791032] (-) TimerEvent: {}
+[17.892082] (-) TimerEvent: {}
+[17.994084] (-) TimerEvent: {}
+[18.110068] (-) TimerEvent: {}
+[18.214691] (-) TimerEvent: {}
+[18.315347] (-) TimerEvent: {}
+[18.416142] (-) TimerEvent: {}
+[18.516838] (-) TimerEvent: {}
+[18.667144] (-) TimerEvent: {}
+[18.773080] (-) TimerEvent: {}
+[18.939455] (-) TimerEvent: {}
+[19.057164] (-) TimerEvent: {}
+[19.158864] (-) TimerEvent: {}
+[19.275022] (-) TimerEvent: {}
+[19.376089] (-) TimerEvent: {}
+[19.527621] (-) TimerEvent: {}
+[19.741034] (-) TimerEvent: {}
+[19.845475] (-) TimerEvent: {}
+[19.971536] (-) TimerEvent: {}
+[20.131656] (-) TimerEvent: {}
+[20.246761] (-) TimerEvent: {}
+[20.363027] (-) TimerEvent: {}
+[20.501971] (-) TimerEvent: {}
+[20.647482] (-) TimerEvent: {}
+[21.013198] (-) TimerEvent: {}
+[21.171959] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_c\x1b[0m\n'}
+[21.175651] (-) TimerEvent: {}
+[21.280014] (-) TimerEvent: {}
+[21.487819] (-) TimerEvent: {}
+[21.598376] (-) TimerEvent: {}
+[22.236264] (-) TimerEvent: {}
+[22.373157] (-) TimerEvent: {}
+[22.484811] (-) TimerEvent: {}
+[22.595831] (-) TimerEvent: {}
+[22.700926] (-) TimerEvent: {}
+[22.900054] (-) TimerEvent: {}
+[23.009039] (-) TimerEvent: {}
+[23.130235] (-) TimerEvent: {}
+[23.294430] (-) TimerEvent: {}
+[23.541605] (-) TimerEvent: {}
+[23.729584] (-) TimerEvent: {}
+[23.954449] (-) TimerEvent: {}
+[24.272530] (-) TimerEvent: {}
+[25.000843] (-) TimerEvent: {}
+[25.611645] (-) TimerEvent: {}
+[25.760935] (-) TimerEvent: {}
+[26.077176] (-) TimerEvent: {}
+[26.252399] (-) TimerEvent: {}
+[26.605782] (-) TimerEvent: {}
+[26.962936] (-) TimerEvent: {}
+[27.293420] (-) TimerEvent: {}
+[27.449054] (-) TimerEvent: {}
+[27.729108] (-) TimerEvent: {}
+[28.055656] (-) TimerEvent: {}
+[28.254212] (-) TimerEvent: {}
+[28.520786] (-) TimerEvent: {}
+[29.136273] (-) TimerEvent: {}
+[29.948594] (-) TimerEvent: {}
+[30.263139] (-) TimerEvent: {}
+[31.015479] (-) TimerEvent: {}
+[31.619214] (-) TimerEvent: {}
+[32.076062] (-) TimerEvent: {}
+[32.335618] (-) TimerEvent: {}
+[32.552947] (-) TimerEvent: {}
+[32.753967] (-) TimerEvent: {}
+[32.965874] (-) TimerEvent: {}
+[33.184797] (-) TimerEvent: {}
+[33.382844] (-) TimerEvent: {}
+[34.394124] (-) TimerEvent: {}
+[35.199653] (-) TimerEvent: {}
+[36.137955] (-) TimerEvent: {}
+[36.490649] (-) TimerEvent: {}
+[36.680939] (-) TimerEvent: {}
+[36.932851] (handpose_publisher) StdoutLine: {'line': b'[ 30%] Built target handpose_publisher__rosidl_typesupport_c\n'}
+[37.170466] (-) TimerEvent: {}
+[37.419643] (-) TimerEvent: {}
+[38.871981] (-) TimerEvent: {}
+[39.741817] (-) TimerEvent: {}
+[39.976488] (-) TimerEvent: {}
+[40.202873] (-) TimerEvent: {}
+[40.894271] (-) TimerEvent: {}
+[41.056598] (-) TimerEvent: {}
+[41.202754] (-) TimerEvent: {}
+[41.719912] (-) TimerEvent: {}
+[41.999261] (-) TimerEvent: {}
+[42.453536] (-) TimerEvent: {}
+[43.070776] (-) TimerEvent: {}
+[44.349422] (-) TimerEvent: {}
+[44.536036] (-) TimerEvent: {}
+[44.762517] (-) TimerEvent: {}
+[44.959555] (-) TimerEvent: {}
+[45.251146] (-) TimerEvent: {}
+[45.514939] (-) TimerEvent: {}
+[45.977924] (-) TimerEvent: {}
+[46.188418] (-) TimerEvent: {}
+[46.452212] (-) TimerEvent: {}
+[46.645540] (-) TimerEvent: {}
+[46.860585] (-) TimerEvent: {}
+[47.223891] (-) TimerEvent: {}
+[47.428261] (-) TimerEvent: {}
+[47.724042] (-) TimerEvent: {}
+[47.931407] (-) TimerEvent: {}
+[48.200754] (-) TimerEvent: {}
+[48.533285] (-) TimerEvent: {}
+[49.112478] (-) TimerEvent: {}
+[49.556300] (-) TimerEvent: {}
+[50.205442] (-) TimerEvent: {}
+[50.353074] (-) TimerEvent: {}
+[50.625899] (-) TimerEvent: {}
+[50.944541] (-) TimerEvent: {}
+[51.351374] (-) TimerEvent: {}
+[51.637875] (-) TimerEvent: {}
+[51.888343] (-) TimerEvent: {}
+[52.082348] (-) TimerEvent: {}
+[52.364614] (-) TimerEvent: {}
+[52.805773] (-) TimerEvent: {}
+[53.063040] (-) TimerEvent: {}
+[53.248361] (-) TimerEvent: {}
+[53.513054] (-) TimerEvent: {}
+[53.731762] (-) TimerEvent: {}
+[53.841186] (-) TimerEvent: {}
+[53.942007] (-) TimerEvent: {}
+[54.042738] (-) TimerEvent: {}
+[54.143644] (-) TimerEvent: {}
+[54.244583] (-) TimerEvent: {}
+[54.345585] (-) TimerEvent: {}
+[54.446477] (-) TimerEvent: {}
+[54.547277] (-) TimerEvent: {}
+[54.650621] (-) TimerEvent: {}
+[54.751447] (-) TimerEvent: {}
+[54.855304] (-) TimerEvent: {}
+[54.956147] (-) TimerEvent: {}
+[55.058162] (-) TimerEvent: {}
+[55.160024] (-) TimerEvent: {}
+[55.261502] (-) TimerEvent: {}
+[55.362350] (-) TimerEvent: {}
+[55.464211] (-) TimerEvent: {}
+[55.565765] (-) TimerEvent: {}
+[55.666396] (-) TimerEvent: {}
+[55.768842] (-) TimerEvent: {}
+[55.869721] (-) TimerEvent: {}
+[55.910618] (handpose_visualizer) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/handpose_visualizer', 'build', '--build-base', '/home/yue/robot/build/handpose_visualizer/build', 'install', '--record', '/home/yue/robot/build/handpose_visualizer/install.log', '--single-version-externally-managed'], 'cwd': '/home/yue/robot/src/handpose_visualizer', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'yue', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/yue/robot/install/handpose_publisher/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/yue', 'OLDPWD': '/home/yue', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1729', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/yue/robot/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'yue', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'yue', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/yue/robot/install/handpose_visualizer/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ultraleap/TrackingService/bin:/opt/ultraleap/TrackingService/bin', 'SESSION_MANAGER': 'local/yue-desktop:@/tmp/.ICE-unix/1701,unix/yue-desktop:/tmp/.ICE-unix/1701', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1499903f_d173_4fcf_b0fc_213dd062f5a7', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.175', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/yue/robot/install/handpose_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yue/robot/build/handpose_visualizer', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yue/robot/build/handpose_visualizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_publisher/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/yue/robot/install/handpose_publisher'}, 'shell': False}
+[55.969888] (-) TimerEvent: {}
+[56.004701] (handpose_publisher) StdoutLine: {'line': b'running egg_info\n'}
+[56.022194] (handpose_publisher) StdoutLine: {'line': b'writing handpose_publisher.egg-info/PKG-INFO\n'}
+[56.023315] (handpose_publisher) StdoutLine: {'line': b'writing dependency_links to handpose_publisher.egg-info/dependency_links.txt\n'}
+[56.025257] (handpose_publisher) StdoutLine: {'line': b'writing top-level names to handpose_publisher.egg-info/top_level.txt\n'}
+[56.042583] (handpose_publisher) StdoutLine: {'line': b"reading manifest file 'handpose_publisher.egg-info/SOURCES.txt'\n"}
+[56.043980] (handpose_publisher) StdoutLine: {'line': b"writing manifest file 'handpose_publisher.egg-info/SOURCES.txt'\n"}
+[56.071186] (-) TimerEvent: {}
+[56.171881] (-) TimerEvent: {}
+[56.276541] (-) TimerEvent: {}
+[56.377248] (-) TimerEvent: {}
+[56.478191] (-) TimerEvent: {}
+[56.578923] (-) TimerEvent: {}
+[56.679627] (-) TimerEvent: {}
+[56.780397] (-) TimerEvent: {}
+[56.848677] (handpose_publisher) StdoutLine: {'line': b'[ 30%] Built target ament_cmake_python_build_handpose_publisher_egg\n'}
+[56.880535] (-) TimerEvent: {}
+[56.981220] (-) TimerEvent: {}
+[57.081897] (-) TimerEvent: {}
+[57.108277] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[57.182085] (-) TimerEvent: {}
+[57.232234] (handpose_publisher) StdoutLine: {'line': b'[ 39%] Built target handpose_publisher__rosidl_typesupport_introspection_c\n'}
+[57.282812] (-) TimerEvent: {}
+[57.308722] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[57.383012] (-) TimerEvent: {}
+[57.483795] (-) TimerEvent: {}
+[57.560972] (handpose_publisher) StdoutLine: {'line': b'[ 48%] Built target handpose_publisher__rosidl_typesupport_fastrtps_c\n'}
+[57.583986] (-) TimerEvent: {}
+[57.685735] (-) TimerEvent: {}
+[57.735529] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[57.785918] (-) TimerEvent: {}
+[57.888106] (-) TimerEvent: {}
+[57.988802] (-) TimerEvent: {}
+[58.089456] (-) TimerEvent: {}
+[58.190119] (-) TimerEvent: {}
+[58.224001] (handpose_publisher) StdoutLine: {'line': b'[ 57%] Built target handpose_publisher__rosidl_typesupport_fastrtps_cpp\n'}
+[58.292152] (-) TimerEvent: {}
+[58.392880] (-) TimerEvent: {}
+[58.493686] (-) TimerEvent: {}
+[58.600421] (-) TimerEvent: {}
+[58.704521] (-) TimerEvent: {}
+[58.806199] (-) TimerEvent: {}
+[58.907031] (-) TimerEvent: {}
+[58.909490] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_cpp\x1b[0m\n'}
+[59.007229] (-) TimerEvent: {}
+[59.107882] (-) TimerEvent: {}
+[59.211329] (-) TimerEvent: {}
+[59.312257] (-) TimerEvent: {}
+[59.415090] (-) TimerEvent: {}
+[59.515852] (-) TimerEvent: {}
+[59.616519] (-) TimerEvent: {}
+[59.720472] (-) TimerEvent: {}
+[59.804426] (handpose_publisher) StdoutLine: {'line': b'[ 66%] Built target handpose_publisher__rosidl_typesupport_cpp\n'}
+[59.820649] (-) TimerEvent: {}
+[59.921696] (-) TimerEvent: {}
+[60.027757] (-) TimerEvent: {}
+[60.135006] (-) TimerEvent: {}
+[60.236720] (-) TimerEvent: {}
+[60.337431] (-) TimerEvent: {}
+[60.442762] (-) TimerEvent: {}
+[60.550508] (-) TimerEvent: {}
+[60.651196] (-) TimerEvent: {}
+[60.751882] (-) TimerEvent: {}
+[60.834540] (handpose_visualizer) StdoutLine: {'line': b'running egg_info\n'}
+[60.840937] (handpose_visualizer) StdoutLine: {'line': b'writing ../../build/handpose_visualizer/handpose_visualizer.egg-info/PKG-INFO\n'}
+[60.842862] (handpose_visualizer) StdoutLine: {'line': b'writing dependency_links to ../../build/handpose_visualizer/handpose_visualizer.egg-info/dependency_links.txt\n'}
+[60.849760] (handpose_visualizer) StdoutLine: {'line': b'writing entry points to ../../build/handpose_visualizer/handpose_visualizer.egg-info/entry_points.txt\n'}
+[60.851091] (handpose_visualizer) StdoutLine: {'line': b'writing requirements to ../../build/handpose_visualizer/handpose_visualizer.egg-info/requires.txt\n'}
+[60.852511] (handpose_visualizer) StdoutLine: {'line': b'writing top-level names to ../../build/handpose_visualizer/handpose_visualizer.egg-info/top_level.txt\n'}
+[60.852757] (-) TimerEvent: {}
+[60.884877] (handpose_visualizer) StdoutLine: {'line': b"reading manifest file '../../build/handpose_visualizer/handpose_visualizer.egg-info/SOURCES.txt'\n"}
+[60.894935] (handpose_visualizer) StdoutLine: {'line': b"writing manifest file '../../build/handpose_visualizer/handpose_visualizer.egg-info/SOURCES.txt'\n"}
+[60.897596] (handpose_visualizer) StdoutLine: {'line': b'running build\n'}
+[60.898470] (handpose_visualizer) StdoutLine: {'line': b'running build_py\n'}
+[60.902915] (handpose_visualizer) StdoutLine: {'line': b'running install\n'}
+[60.904832] (handpose_visualizer) StdoutLine: {'line': b'running install_lib\n'}
+[60.952971] (-) TimerEvent: {}
+[60.989583] (handpose_visualizer) StdoutLine: {'line': b'running install_egg_info\n'}
+[61.024324] (handpose_visualizer) StdoutLine: {'line': b"removing '/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer-0.1.0-py3.10.egg-info' (and everything under it)\n"}
+[61.027574] (handpose_visualizer) StdoutLine: {'line': b'Copying ../../build/handpose_visualizer/handpose_visualizer.egg-info to /home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages/handpose_visualizer-0.1.0-py3.10.egg-info\n'}
+[61.040747] (handpose_visualizer) StdoutLine: {'line': b'running install_scripts\n'}
+[61.053103] (-) TimerEvent: {}
+[61.156187] (-) TimerEvent: {}
+[61.266649] (-) TimerEvent: {}
+[61.421982] (-) TimerEvent: {}
+[61.546291] (-) TimerEvent: {}
+[61.659685] (-) TimerEvent: {}
+[61.760633] (-) TimerEvent: {}
+[61.920949] (-) TimerEvent: {}
+[62.003133] (handpose_visualizer) StdoutLine: {'line': b'Installing handpose_visualizer script to /home/yue/robot/install/handpose_visualizer/bin\n'}
+[62.031740] (-) TimerEvent: {}
+[62.032192] (handpose_visualizer) StdoutLine: {'line': b"writing list of installed files to '/home/yue/robot/build/handpose_visualizer/install.log'\n"}
+[62.082975] (handpose_publisher) StdoutLine: {'line': b'[ 66%] Built target handpose_publisher\n'}
+[62.131949] (-) TimerEvent: {}
+[62.325396] (-) TimerEvent: {}
+[62.433682] (-) TimerEvent: {}
+[62.542389] (-) TimerEvent: {}
+[62.667799] (-) TimerEvent: {}
+[62.775586] (-) TimerEvent: {}
+[62.871187] (handpose_visualizer) CommandEnded: {'returncode': 0}
+[62.891502] (-) TimerEvent: {}
+[62.992342] (-) TimerEvent: {}
+[63.098456] (-) TimerEvent: {}
+[63.207142] (-) TimerEvent: {}
+[63.308405] (-) TimerEvent: {}
+[63.436136] (-) TimerEvent: {}
+[63.590693] (-) TimerEvent: {}
+[63.657455] (handpose_visualizer) JobEnded: {'identifier': 'handpose_visualizer', 'rc': 0}
+[63.690446] (-) TimerEvent: {}
+[63.791135] (-) TimerEvent: {}
+[63.870623] (handpose_publisher) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target leap_handpose_publisher\x1b[0m\n'}
+[63.909994] (-) TimerEvent: {}
+[64.075903] (-) TimerEvent: {}
+[64.244628] (-) TimerEvent: {}
+[64.360254] (-) TimerEvent: {}
+[64.540155] (-) TimerEvent: {}
+[64.658435] (-) TimerEvent: {}
+[64.766427] (-) TimerEvent: {}
+[65.156955] (-) TimerEvent: {}
+[65.430112] (-) TimerEvent: {}
+[65.587969] (-) TimerEvent: {}
+[65.692524] (-) TimerEvent: {}
+[65.794644] (-) TimerEvent: {}
+[65.895390] (-) TimerEvent: {}
+[65.996123] (-) TimerEvent: {}
+[66.116459] (-) TimerEvent: {}
+[66.335443] (-) TimerEvent: {}
+[66.560563] (-) TimerEvent: {}
+[66.666418] (-) TimerEvent: {}
+[66.769977] (-) TimerEvent: {}
+[66.890902] (-) TimerEvent: {}
+[67.078537] (-) TimerEvent: {}
+[67.832674] (-) TimerEvent: {}
+[68.052549] (-) TimerEvent: {}
+[68.155016] (-) TimerEvent: {}
+[68.256964] (-) TimerEvent: {}
+[68.368469] (-) TimerEvent: {}
+[68.475396] (-) TimerEvent: {}
+[68.589612] (-) TimerEvent: {}
+[68.726822] (-) TimerEvent: {}
+[68.827869] (-) TimerEvent: {}
+[68.936219] (-) TimerEvent: {}
+[69.042034] (-) TimerEvent: {}
+[69.199652] (-) TimerEvent: {}
+[69.467003] (-) TimerEvent: {}
+[69.874271] (-) TimerEvent: {}
+[70.018214] (-) TimerEvent: {}
+[70.251743] (-) TimerEvent: {}
+[70.514355] (-) TimerEvent: {}
+[70.839200] (-) TimerEvent: {}
+[71.087626] (handpose_publisher) StdoutLine: {'line': b'[ 72%] Built target leap_handpose_publisher\n'}
+[71.165023] (-) TimerEvent: {}
+[71.354744] (-) TimerEvent: {}
+[71.521948] (-) TimerEvent: {}
+[71.941874] (-) TimerEvent: {}
+[72.144823] (-) TimerEvent: {}
+[72.457235] (-) TimerEvent: {}
+[72.558829] (-) TimerEvent: {}
+[72.665878] (-) TimerEvent: {}
+[72.770389] (-) TimerEvent: {}
+[73.115853] (-) TimerEvent: {}
+[73.520764] (-) TimerEvent: {}
+[73.826256] (-) TimerEvent: {}
+[73.992210] (-) TimerEvent: {}
+[74.276341] (-) TimerEvent: {}
+[74.791241] (-) TimerEvent: {}
+[75.454885] (-) TimerEvent: {}
+[75.556674] (-) TimerEvent: {}
+[75.658377] (-) TimerEvent: {}
+[75.933514] (-) TimerEvent: {}
+[76.919448] (-) TimerEvent: {}
+[77.876420] (-) TimerEvent: {}
+[78.837240] (-) TimerEvent: {}
+[79.355733] (-) TimerEvent: {}
+[79.699651] (-) TimerEvent: {}
+[80.085060] (-) TimerEvent: {}
+[80.737267] (-) TimerEvent: {}
+[80.843125] (-) TimerEvent: {}
+[80.949172] (-) TimerEvent: {}
+[81.049865] (-) TimerEvent: {}
+[81.150566] (-) TimerEvent: {}
+[81.257139] (-) TimerEvent: {}
+[81.357845] (-) TimerEvent: {}
+[81.469664] (-) TimerEvent: {}
+[81.965153] (-) TimerEvent: {}
+[82.129339] (-) TimerEvent: {}
+[82.231615] (-) TimerEvent: {}
+[82.348545] (-) TimerEvent: {}
+[82.534692] (-) TimerEvent: {}
+[82.638104] (-) TimerEvent: {}
+[82.742758] (-) TimerEvent: {}
+[82.875383] (-) TimerEvent: {}
+[82.981403] (-) TimerEvent: {}
+[83.170509] (-) TimerEvent: {}
+[83.563216] (-) TimerEvent: {}
+[83.914651] (-) TimerEvent: {}
+[84.570402] (-) TimerEvent: {}
+[85.352774] (-) TimerEvent: {}
+[85.515943] (-) TimerEvent: {}
+[85.643251] (-) TimerEvent: {}

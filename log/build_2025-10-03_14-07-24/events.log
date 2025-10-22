@@ -1,0 +1,438 @@
+[0.000000] (-) TimerEvent: {}
+[0.000574] (-) JobUnselected: {'identifier': 'handpose_publisher'}
+[0.001244] (-) JobUnselected: {'identifier': 'handpose_visualizer'}
+[0.001494] (-) JobUnselected: {'identifier': 'piper'}
+[0.001592] (-) JobUnselected: {'identifier': 'piper_description'}
+[0.001661] (-) JobUnselected: {'identifier': 'piper_gazebo'}
+[0.001722] (-) JobUnselected: {'identifier': 'piper_handpose_controller'}
+[0.001783] (-) JobUnselected: {'identifier': 'piper_humble'}
+[0.001845] (-) JobUnselected: {'identifier': 'piper_mujoco'}
+[0.001904] (-) JobUnselected: {'identifier': 'piper_no_gripper_moveit'}
+[0.001963] (-) JobUnselected: {'identifier': 'piper_with_gripper_moveit'}
+[0.002059] (piper_msgs) JobQueued: {'identifier': 'piper_msgs', 'dependencies': OrderedDict()}
+[0.002123] (piper_msgs) JobStarted: {'identifier': 'piper_msgs'}
+[0.046637] (piper_msgs) JobProgress: {'identifier': 'piper_msgs', 'progress': 'cmake'}
+[0.047673] (piper_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/yue/robot/src/Piper_ros/src/piper_msgs', '-DCMAKE_INSTALL_PREFIX=/home/yue/robot/install/piper_msgs'], 'cwd': '/home/yue/robot/build/piper_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'yue'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/yue/robot/install/handpose_publisher/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/yue'), ('OLDPWD', '/home/yue/robot/src/Piper_ros'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1671'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/yue/robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'yue'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'yue'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/yue/robot/install/handpose_visualizer/bin:/opt/ros/humble/bin:/home/yue/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ultraleap/TrackingService/bin:/opt/ultraleap/TrackingService/bin'), ('SESSION_MANAGER', 'local/yue-desktop:@/tmp/.ICE-unix/1646,unix/yue-desktop:/tmp/.ICE-unix/1646'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/58724b64_a596_4071_979b_fd997fbb1906'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.104'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/yue/robot/build/piper_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_publisher/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble')]), 'shell': False}
+[0.099484] (-) TimerEvent: {}
+[0.200322] (-) TimerEvent: {}
+[0.271044] (piper_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.300601] (-) TimerEvent: {}
+[0.401582] (-) TimerEvent: {}
+[0.454337] (piper_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.479473] (piper_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.501807] (-) TimerEvent: {}
+[0.602696] (-) TimerEvent: {}
+[0.642537] (piper_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.672928] (piper_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.702891] (-) TimerEvent: {}
+[0.745799] (piper_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.747627] (piper_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.762410] (piper_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.803356] (-) TimerEvent: {}
+[0.905615] (-) TimerEvent: {}
+[0.946053] (piper_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.965599] (piper_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.966720] (piper_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.967768] (piper_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.005814] (-) TimerEvent: {}
+[1.035161] (piper_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.105993] (-) TimerEvent: {}
+[1.206779] (-) TimerEvent: {}
+[1.307577] (-) TimerEvent: {}
+[1.408398] (-) TimerEvent: {}
+[1.415175] (piper_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.508575] (-) TimerEvent: {}
+[1.609382] (-) TimerEvent: {}
+[1.666340] (piper_msgs) StdoutLine: {'line': b'-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[1.668407] (piper_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.676061] (piper_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.688964] (piper_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.709578] (-) TimerEvent: {}
+[1.768969] (piper_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.809744] (-) TimerEvent: {}
+[1.910445] (-) TimerEvent: {}
+[2.011220] (-) TimerEvent: {}
+[2.111893] (-) TimerEvent: {}
+[2.212588] (-) TimerEvent: {}
+[2.313269] (-) TimerEvent: {}
+[2.413986] (-) TimerEvent: {}
+[2.514873] (-) TimerEvent: {}
+[2.565616] (piper_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[2.615050] (-) TimerEvent: {}
+[2.715805] (-) TimerEvent: {}
+[2.816619] (-) TimerEvent: {}
+[2.917428] (-) TimerEvent: {}
+[3.018156] (-) TimerEvent: {}
+[3.106416] (piper_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.118937] (-) TimerEvent: {}
+[3.219853] (-) TimerEvent: {}
+[3.321246] (-) TimerEvent: {}
+[3.422178] (-) TimerEvent: {}
+[3.523047] (-) TimerEvent: {}
+[3.624762] (-) TimerEvent: {}
+[3.725671] (-) TimerEvent: {}
+[3.826579] (-) TimerEvent: {}
+[3.869634] (piper_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.926716] (-) TimerEvent: {}
+[3.963999] (piper_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[3.970514] (piper_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[4.026939] (-) TimerEvent: {}
+[4.042663] (piper_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[4.043305] (piper_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[4.043617] (piper_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[4.043988] (piper_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[4.096997] (piper_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[4.127105] (-) TimerEvent: {}
+[4.185076] (piper_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[4.228011] (-) TimerEvent: {}
+[4.238986] (piper_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[4.241459] (piper_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[4.247987] (piper_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[4.310216] (piper_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[4.328185] (-) TimerEvent: {}
+[4.330319] (piper_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/yue/robot/build/piper_msgs\n'}
+[4.348309] (piper_msgs) CommandEnded: {'returncode': 0}
+[4.350028] (piper_msgs) JobProgress: {'identifier': 'piper_msgs', 'progress': 'build'}
+[4.352325] (piper_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/yue/robot/build/piper_msgs', '--', '-j6', '-l6'], 'cwd': '/home/yue/robot/build/piper_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'yue'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/yue/robot/install/handpose_publisher/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/yue'), ('OLDPWD', '/home/yue/robot/src/Piper_ros'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1671'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/yue/robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'yue'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'yue'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/yue/robot/install/handpose_visualizer/bin:/opt/ros/humble/bin:/home/yue/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ultraleap/TrackingService/bin:/opt/ultraleap/TrackingService/bin'), ('SESSION_MANAGER', 'local/yue-desktop:@/tmp/.ICE-unix/1646,unix/yue-desktop:/tmp/.ICE-unix/1646'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/58724b64_a596_4071_979b_fd997fbb1906'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.104'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/yue/robot/build/piper_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_publisher/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble')]), 'shell': False}
+[4.428363] (-) TimerEvent: {}
+[4.436243] (piper_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[4.502008] (piper_msgs) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[4.522089] (piper_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_copy_piper_msgs\n'}
+[4.528555] (-) TimerEvent: {}
+[4.629214] (-) TimerEvent: {}
+[4.729808] (-) TimerEvent: {}
+[4.830478] (-) TimerEvent: {}
+[4.932194] (-) TimerEvent: {}
+[5.032821] (-) TimerEvent: {}
+[5.048989] (piper_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[5.050406] (piper_msgs) StdoutLine: {'line': b'creating piper_msgs.egg-info\n'}
+[5.050864] (piper_msgs) StdoutLine: {'line': b'writing piper_msgs.egg-info/PKG-INFO\n'}
+[5.051272] (piper_msgs) StdoutLine: {'line': b'writing dependency_links to piper_msgs.egg-info/dependency_links.txt\n'}
+[5.051611] (piper_msgs) StdoutLine: {'line': b'writing top-level names to piper_msgs.egg-info/top_level.txt\n'}
+[5.052092] (piper_msgs) StdoutLine: {'line': b"writing manifest file 'piper_msgs.egg-info/SOURCES.txt'\n"}
+[5.056643] (piper_msgs) StdoutLine: {'line': b"reading manifest file 'piper_msgs.egg-info/SOURCES.txt'\n"}
+[5.057564] (piper_msgs) StdoutLine: {'line': b"writing manifest file 'piper_msgs.egg-info/SOURCES.txt'\n"}
+[5.132978] (-) TimerEvent: {}
+[5.144020] (piper_msgs) StdoutLine: {'line': b'[  4%] Built target ament_cmake_python_build_piper_msgs_egg\n'}
+[5.233132] (-) TimerEvent: {}
+[5.334533] (-) TimerEvent: {}
+[5.405430] (piper_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_c.dir/rosidl_generator_c/piper_msgs/msg/detail/pos_cmd__functions.c.o\x1b[0m\n'}
+[5.405974] (piper_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_c.dir/rosidl_generator_c/piper_msgs/msg/detail/piper_status_msg__functions.c.o\x1b[0m\n'}
+[5.406145] (piper_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_c.dir/rosidl_generator_c/piper_msgs/srv/detail/enable__functions.c.o\x1b[0m\n'}
+[5.422087] (piper_msgs) StdoutLine: {'line': b'[ 10%] Built target piper_msgs__cpp\n'}
+[5.434748] (-) TimerEvent: {}
+[5.443734] (piper_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.444226] (piper_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[5.444780] (piper_msgs) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.534938] (-) TimerEvent: {}
+[5.599188] (piper_msgs) StdoutLine: {'line': b'[ 19%] \x1b[32m\x1b[1mLinking C shared library libpiper_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[5.635086] (-) TimerEvent: {}
+[5.677355] (piper_msgs) StdoutLine: {'line': b'[ 19%] Built target piper_msgs__rosidl_generator_c\n'}
+[5.697716] (piper_msgs) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.698231] (piper_msgs) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.709925] (piper_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[5.735238] (-) TimerEvent: {}
+[5.836247] (-) TimerEvent: {}
+[5.936919] (-) TimerEvent: {}
+[6.037585] (-) TimerEvent: {}
+[6.138635] (-) TimerEvent: {}
+[6.176174] (piper_msgs) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/piper_msgs/msg/piper_status_msg__type_support.cpp.o\x1b[0m\n'}
+[6.238785] (-) TimerEvent: {}
+[6.268795] (piper_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/piper_msgs/msg/detail/piper_status_msg__type_support.cpp.o\x1b[0m\n'}
+[6.339009] (-) TimerEvent: {}
+[6.439669] (-) TimerEvent: {}
+[6.443456] (piper_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/piper_msgs/msg/piper_status_msg__type_support.cpp.o\x1b[0m\n'}
+[6.446212] (piper_msgs) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/piper_msgs/msg/detail/dds_fastrtps/piper_status_msg__type_support.cpp.o\x1b[0m\n'}
+[6.519374] (piper_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/piper_msgs/msg/pos_cmd__type_support.cpp.o\x1b[0m\n'}
+[6.540297] (-) TimerEvent: {}
+[6.542610] (piper_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/piper_msgs/msg/detail/piper_status_msg__type_support_c.cpp.o\x1b[0m\n'}
+[6.591039] (piper_msgs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/piper_msgs/srv/enable__type_support.cpp.o\x1b[0m\n'}
+[6.640531] (-) TimerEvent: {}
+[6.655788] (piper_msgs) StdoutLine: {'line': b'[ 42%] \x1b[32m\x1b[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[6.740779] (-) TimerEvent: {}
+[6.754475] (piper_msgs) StdoutLine: {'line': b'[ 42%] Built target piper_msgs__rosidl_typesupport_c\n'}
+[6.757391] (piper_msgs) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/piper_msgs/msg/detail/piper_status_msg__type_support.c.o\x1b[0m\n'}
+[6.774865] (piper_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/piper_msgs/msg/detail/pos_cmd__type_support.c.o\x1b[0m\n'}
+[6.839651] (piper_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/piper_msgs/srv/detail/enable__type_support.c.o\x1b[0m\n'}
+[6.840890] (-) TimerEvent: {}
+[6.887524] (piper_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/piper_msgs/msg/detail/dds_fastrtps/pos_cmd__type_support.cpp.o\x1b[0m\n'}
+[6.941158] (-) TimerEvent: {}
+[6.971752] (piper_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/piper_msgs/msg/pos_cmd__type_support.cpp.o\x1b[0m\n'}
+[6.991062] (piper_msgs) StdoutLine: {'line': b'[ 55%] \x1b[32m\x1b[1mLinking C shared library libpiper_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[7.041369] (-) TimerEvent: {}
+[7.120914] (piper_msgs) StdoutLine: {'line': b'[ 55%] Built target piper_msgs__rosidl_typesupport_introspection_c\n'}
+[7.141570] (-) TimerEvent: {}
+[7.177341] (piper_msgs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/piper_msgs/srv/enable__type_support.cpp.o\x1b[0m\n'}
+[7.241781] (-) TimerEvent: {}
+[7.263355] (piper_msgs) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/piper_msgs/msg/detail/pos_cmd__type_support.cpp.o\x1b[0m\n'}
+[7.341997] (-) TimerEvent: {}
+[7.442830] (-) TimerEvent: {}
+[7.544297] (-) TimerEvent: {}
+[7.545641] (piper_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/piper_msgs/msg/detail/pos_cmd__type_support_c.cpp.o\x1b[0m\n'}
+[7.644467] (-) TimerEvent: {}
+[7.709482] (piper_msgs) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/piper_msgs/srv/detail/dds_fastrtps/enable__type_support.cpp.o\x1b[0m\n'}
+[7.729713] (piper_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/piper_msgs/srv/detail/enable__type_support_c.cpp.o\x1b[0m\n'}
+[7.745584] (-) TimerEvent: {}
+[7.846349] (-) TimerEvent: {}
+[7.943166] (piper_msgs) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/piper_msgs/srv/detail/enable__type_support.cpp.o\x1b[0m\n'}
+[7.946522] (-) TimerEvent: {}
+[8.047255] (-) TimerEvent: {}
+[8.115161] (piper_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[8.147460] (-) TimerEvent: {}
+[8.208577] (piper_msgs) StdoutLine: {'line': b'[ 70%] Built target piper_msgs__rosidl_typesupport_cpp\n'}
+[8.247635] (-) TimerEvent: {}
+[8.348374] (-) TimerEvent: {}
+[8.449146] (-) TimerEvent: {}
+[8.537032] (piper_msgs) StdoutLine: {'line': b'[ 72%] \x1b[32m\x1b[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[8.549325] (-) TimerEvent: {}
+[8.650033] (-) TimerEvent: {}
+[8.706098] (piper_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[8.706823] (piper_msgs) StdoutLine: {'line': b'[ 74%] Built target piper_msgs__rosidl_typesupport_fastrtps_c\n'}
+[8.750213] (-) TimerEvent: {}
+[8.851106] (-) TimerEvent: {}
+[8.871995] (piper_msgs) StdoutLine: {'line': b'[ 74%] Built target piper_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[8.912759] (piper_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[8.951275] (-) TimerEvent: {}
+[8.991466] (piper_msgs) StdoutLine: {'line': b'[ 76%] Built target piper_msgs__rosidl_typesupport_introspection_cpp\n'}
+[9.035869] (piper_msgs) StdoutLine: {'line': b'[ 76%] Built target piper_msgs\n'}
+[9.051963] (-) TimerEvent: {}
+[9.081342] (piper_msgs) StdoutLine: {'line': b'[ 78%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[9.152163] (-) TimerEvent: {}
+[9.253335] (-) TimerEvent: {}
+[9.354656] (-) TimerEvent: {}
+[9.456142] (-) TimerEvent: {}
+[9.557189] (-) TimerEvent: {}
+[9.658128] (-) TimerEvent: {}
+[9.759039] (-) TimerEvent: {}
+[9.859833] (-) TimerEvent: {}
+[9.960559] (-) TimerEvent: {}
+[10.061644] (-) TimerEvent: {}
+[10.162279] (-) TimerEvent: {}
+[10.262911] (-) TimerEvent: {}
+[10.363848] (-) TimerEvent: {}
+[10.464718] (-) TimerEvent: {}
+[10.548022] (piper_msgs) StdoutLine: {'line': b'[ 78%] Built target piper_msgs__py\n'}
+[10.565054] (-) TimerEvent: {}
+[10.597020] (piper_msgs) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_py.dir/rosidl_generator_py/piper_msgs/srv/_enable_s.c.o\x1b[0m\n'}
+[10.597897] (piper_msgs) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_py.dir/rosidl_generator_py/piper_msgs/msg/_pos_cmd_s.c.o\x1b[0m\n'}
+[10.600344] (piper_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_py.dir/rosidl_generator_py/piper_msgs/msg/_piper_status_msg_s.c.o\x1b[0m\n'}
+[10.665229] (-) TimerEvent: {}
+[10.765939] (-) TimerEvent: {}
+[10.847499] (piper_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/piper_msgs/libpiper_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[10.866131] (-) TimerEvent: {}
+[10.935016] (piper_msgs) StdoutLine: {'line': b'[ 87%] Built target piper_msgs__rosidl_generator_py\n'}
+[10.966305] (-) TimerEvent: {}
+[10.974299] (piper_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[10.975050] (piper_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[10.978152] (piper_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[11.066517] (-) TimerEvent: {}
+[11.167229] (-) TimerEvent: {}
+[11.196426] (piper_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[11.197056] (piper_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[11.199751] (piper_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[11.262948] (piper_msgs) StdoutLine: {'line': b'[100%] Built target piper_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[11.263475] (piper_msgs) StdoutLine: {'line': b'[100%] Built target piper_msgs__rosidl_typesupport_c__pyext\n'}
+[11.267324] (-) TimerEvent: {}
+[11.277873] (piper_msgs) StdoutLine: {'line': b'[100%] Built target piper_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[11.306004] (piper_msgs) CommandEnded: {'returncode': 0}
+[11.308299] (piper_msgs) JobProgress: {'identifier': 'piper_msgs', 'progress': 'install'}
+[11.328812] (piper_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/yue/robot/build/piper_msgs'], 'cwd': '/home/yue/robot/build/piper_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'yue'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/yue/robot/install/handpose_publisher/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/yue'), ('OLDPWD', '/home/yue/robot/src/Piper_ros'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1671'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/yue/robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'yue'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'yue'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/yue/robot/install/handpose_visualizer/bin:/opt/ros/humble/bin:/home/yue/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/ultraleap/TrackingService/bin:/opt/ultraleap/TrackingService/bin'), ('SESSION_MANAGER', 'local/yue-desktop:@/tmp/.ICE-unix/1646,unix/yue-desktop:/tmp/.ICE-unix/1646'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/58724b64_a596_4071_979b_fd997fbb1906'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.104'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/yue/robot/build/piper_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/yue/robot/install/handpose_visualizer/lib/python3.10/site-packages:/home/yue/robot/install/handpose_publisher/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/yue/robot/install/handpose_publisher:/opt/ros/humble')]), 'shell': False}
+[11.346273] (piper_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[11.346801] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/rosidl_interfaces/piper_msgs\n'}
+[11.347289] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs\n'}
+[11.347581] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv\n'}
+[11.348067] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail\n'}
+[11.348514] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__struct.h\n'}
+[11.348854] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.h\n'}
+[11.349172] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__functions.c\n'}
+[11.349480] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__functions.h\n'}
+[11.349728] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/enable.h\n'}
+[11.350081] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg\n'}
+[11.350350] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail\n'}
+[11.350988] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__functions.h\n'}
+[11.351329] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.h\n'}
+[11.351599] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__functions.c\n'}
+[11.351845] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.h\n'}
+[11.352116] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__functions.h\n'}
+[11.352429] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__struct.h\n'}
+[11.352678] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__functions.c\n'}
+[11.352935] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__struct.h\n'}
+[11.353186] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[11.353439] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/pos_cmd.h\n'}
+[11.353671] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/piper_status_msg.h\n'}
+[11.354017] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/library_path.sh\n'}
+[11.354311] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/library_path.dsv\n'}
+[11.354530] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_c.so\n'}
+[11.355942] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_c.so" to ""\n'}
+[11.356299] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs\n'}
+[11.356523] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv\n'}
+[11.356703] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail\n'}
+[11.356888] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_fastrtps_c.h\n'}
+[11.357012] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg\n'}
+[11.357178] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail\n'}
+[11.357302] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_fastrtps_c.h\n'}
+[11.357424] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[11.357536] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[11.357654] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[11.357863] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[11.358108] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs\n'}
+[11.358324] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv\n'}
+[11.358680] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail\n'}
+[11.359026] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.c\n'}
+[11.359860] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_introspection_c.h\n'}
+[11.360251] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg\n'}
+[11.360497] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail\n'}
+[11.360625] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.c\n'}
+[11.360750] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_introspection_c.h\n'}
+[11.360959] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_introspection_c.h\n'}
+[11.361135] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.c\n'}
+[11.361255] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[11.361368] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_c.so\n'}
+[11.361480] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[11.361592] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_c.so\n'}
+[11.362215] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_c.so" to ""\n'}
+[11.362485] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs\n'}
+[11.362763] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv\n'}
+[11.363081] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail\n'}
+[11.363303] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__builder.hpp\n'}
+[11.363755] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__struct.hpp\n'}
+[11.364048] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__traits.hpp\n'}
+[11.364350] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.hpp\n'}
+[11.364570] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/enable.hpp\n'}
+[11.364885] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg\n'}
+[11.365236] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail\n'}
+[11.365507] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__traits.hpp\n'}
+[11.365832] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__builder.hpp\n'}
+[11.366120] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__struct.hpp\n'}
+[11.366397] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.hpp\n'}
+[11.366755] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__struct.hpp\n'}
+[11.367061] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__builder.hpp\n'}
+[11.367396] (-) TimerEvent: {}
+[11.367703] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.hpp\n'}
+[11.368010] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__traits.hpp\n'}
+[11.368228] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/piper_status_msg.hpp\n'}
+[11.368471] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[11.368648] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/pos_cmd.hpp\n'}
+[11.368863] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs\n'}
+[11.369174] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv\n'}
+[11.369424] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail\n'}
+[11.369663] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/dds_fastrtps\n'}
+[11.369939] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[11.370184] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg\n'}
+[11.370471] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail\n'}
+[11.370646] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[11.370827] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[11.371075] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/dds_fastrtps\n'}
+[11.371248] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[11.371412] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[11.371566] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[11.372025] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs\n'}
+[11.372216] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv\n'}
+[11.372375] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail\n'}
+[11.372640] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.cpp\n'}
+[11.372862] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_introspection_cpp.hpp\n'}
+[11.373035] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg\n'}
+[11.373257] (piper_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail\n'}
+[11.373476] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_introspection_cpp.hpp\n'}
+[11.373698] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.cpp\n'}
+[11.373910] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.cpp\n'}
+[11.374176] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[11.374389] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[11.374633] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[11.374858] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_cpp.so\n'}
+[11.375080] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[11.375323] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/pythonpath.sh\n'}
+[11.375485] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/pythonpath.dsv\n'}
+[11.375758] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info\n'}
+[11.375945] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[11.376117] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[11.376346] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[11.376533] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[11.376710] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs\n'}
+[11.376987] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/libpiper_msgs__rosidl_generator_py.so\n'}
+[11.377241] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[11.377463] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv\n'}
+[11.377690] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/__init__.py\n'}
+[11.377922] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/_enable.py\n'}
+[11.378150] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/_enable_s.c\n'}
+[11.378382] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[11.378639] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/__init__.py\n'}
+[11.378819] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[11.378986] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[11.379186] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg\n'}
+[11.379354] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_pos_cmd_s.c\n'}
+[11.379526] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/__init__.py\n'}
+[11.379693] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_piper_status_msg.py\n'}
+[11.379888] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_piper_status_msg_s.c\n'}
+[11.380061] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_pos_cmd.py\n'}
+[11.380225] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[11.380393] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[11.468398] (-) TimerEvent: {}
+[11.526316] (piper_msgs) StdoutLine: {'line': b"Listing '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs'...\n"}
+[11.526797] (piper_msgs) StdoutLine: {'line': b"Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/__init__.py'...\n"}
+[11.526975] (piper_msgs) StdoutLine: {'line': b"Listing '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg'...\n"}
+[11.527119] (piper_msgs) StdoutLine: {'line': b"Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/__init__.py'...\n"}
+[11.527260] (piper_msgs) StdoutLine: {'line': b"Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_piper_status_msg.py'...\n"}
+[11.527446] (piper_msgs) StdoutLine: {'line': b"Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_pos_cmd.py'...\n"}
+[11.527580] (piper_msgs) StdoutLine: {'line': b"Listing '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv'...\n"}
+[11.527707] (piper_msgs) StdoutLine: {'line': b"Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/__init__.py'...\n"}
+[11.528168] (piper_msgs) StdoutLine: {'line': b"Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/_enable.py'...\n"}
+[11.538916] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[11.539487] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[11.540076] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[11.540741] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[11.541168] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[11.541884] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[11.542264] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_py.so\n'}
+[11.542781] (piper_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_py.so" to ""\n'}
+[11.543121] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PiperStatusMsg.idl\n'}
+[11.543437] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PosCmd.idl\n'}
+[11.543838] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable.idl\n'}
+[11.544218] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PiperStatusMsg.msg\n'}
+[11.544538] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PosCmd.msg\n'}
+[11.544856] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable.srv\n'}
+[11.545186] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable_Request.msg\n'}
+[11.545507] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable_Response.msg\n'}
+[11.545983] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/package_run_dependencies/piper_msgs\n'}
+[11.546304] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/parent_prefix_path/piper_msgs\n'}
+[11.546631] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/ament_prefix_path.sh\n'}
+[11.546924] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/ament_prefix_path.dsv\n'}
+[11.547192] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/path.sh\n'}
+[11.547541] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/path.dsv\n'}
+[11.547884] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.bash\n'}
+[11.548237] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.sh\n'}
+[11.548493] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.zsh\n'}
+[11.548821] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.dsv\n'}
+[11.549114] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/package.dsv\n'}
+[11.549452] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/packages/piper_msgs\n'}
+[11.549711] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_cExport.cmake\n'}
+[11.550029] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[11.550356] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[11.550617] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[11.551262] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[11.552209] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[11.552717] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cExport.cmake\n'}
+[11.553020] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[11.553279] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_cppExport.cmake\n'}
+[11.553597] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[11.553912] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[11.554216] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[11.554643] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[11.554967] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[11.555346] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[11.555600] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_pyExport.cmake\n'}
+[11.556665] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[11.557034] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[11.557302] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[11.557668] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[11.557986] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[11.558338] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[11.558634] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[11.558951] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[11.559194] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgsConfig.cmake\n'}
+[11.559430] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgsConfig-version.cmake\n'}
+[11.559662] (piper_msgs) StdoutLine: {'line': b'-- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/package.xml\n'}
+[11.565177] (piper_msgs) CommandEnded: {'returncode': 0}
+[11.568447] (-) TimerEvent: {}
+[11.648303] (piper_msgs) JobEnded: {'identifier': 'piper_msgs', 'rc': 0}
+[11.650486] (-) EventReactorShutdown: {}

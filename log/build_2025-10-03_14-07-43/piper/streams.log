@@ -1,0 +1,49 @@
+[1.719s] Invoking command in '/home/yue/robot/src/Piper_ros/src/piper': PYTHONPATH=/home/yue/robot/build/piper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/piper/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/piper build --build-base /home/yue/robot/build/piper/build install --record /home/yue/robot/build/piper/install.log --single-version-externally-managed install_data
+[2.323s] running egg_info
+[2.324s] creating ../../../../build/piper/piper.egg-info
+[2.324s] writing ../../../../build/piper/piper.egg-info/PKG-INFO
+[2.325s] writing dependency_links to ../../../../build/piper/piper.egg-info/dependency_links.txt
+[2.325s] writing entry points to ../../../../build/piper/piper.egg-info/entry_points.txt
+[2.326s] writing requirements to ../../../../build/piper/piper.egg-info/requires.txt
+[2.326s] writing top-level names to ../../../../build/piper/piper.egg-info/top_level.txt
+[2.326s] writing manifest file '../../../../build/piper/piper.egg-info/SOURCES.txt'
+[2.330s] reading manifest file '../../../../build/piper/piper.egg-info/SOURCES.txt'
+[2.353s] adding license file 'LICENSE'
+[2.354s] writing manifest file '../../../../build/piper/piper.egg-info/SOURCES.txt'
+[2.354s] running build
+[2.354s] running build_py
+[2.355s] creating /home/yue/robot/build/piper/build
+[2.355s] creating /home/yue/robot/build/piper/build/lib
+[2.355s] creating /home/yue/robot/build/piper/build/lib/piper
+[2.355s] copying piper/piper_read_slave_joint.py -> /home/yue/robot/build/piper/build/lib/piper
+[2.355s] copying piper/__init__.py -> /home/yue/robot/build/piper/build/lib/piper
+[2.355s] copying piper/piper_ctrl_single_node.py -> /home/yue/robot/build/piper/build/lib/piper
+[2.356s] copying piper/piper_ctrl_single_node_new.py -> /home/yue/robot/build/piper/build/lib/piper
+[2.356s] running install
+[2.356s] running install_lib
+[2.356s] creating /home/yue/robot/install/piper/lib/python3.10/site-packages/piper
+[2.356s] copying /home/yue/robot/build/piper/build/lib/piper/piper_read_slave_joint.py -> /home/yue/robot/install/piper/lib/python3.10/site-packages/piper
+[2.356s] copying /home/yue/robot/build/piper/build/lib/piper/__init__.py -> /home/yue/robot/install/piper/lib/python3.10/site-packages/piper
+[2.356s] copying /home/yue/robot/build/piper/build/lib/piper/piper_ctrl_single_node.py -> /home/yue/robot/install/piper/lib/python3.10/site-packages/piper
+[2.356s] copying /home/yue/robot/build/piper/build/lib/piper/piper_ctrl_single_node_new.py -> /home/yue/robot/install/piper/lib/python3.10/site-packages/piper
+[2.356s] byte-compiling /home/yue/robot/install/piper/lib/python3.10/site-packages/piper/piper_read_slave_joint.py to piper_read_slave_joint.cpython-310.pyc
+[2.357s] byte-compiling /home/yue/robot/install/piper/lib/python3.10/site-packages/piper/__init__.py to __init__.cpython-310.pyc
+[2.357s] byte-compiling /home/yue/robot/install/piper/lib/python3.10/site-packages/piper/piper_ctrl_single_node.py to piper_ctrl_single_node.cpython-310.pyc
+[2.358s] byte-compiling /home/yue/robot/install/piper/lib/python3.10/site-packages/piper/piper_ctrl_single_node_new.py to piper_ctrl_single_node_new.cpython-310.pyc
+[2.358s] running install_data
+[2.358s] creating /home/yue/robot/install/piper/share/ament_index
+[2.358s] creating /home/yue/robot/install/piper/share/ament_index/resource_index
+[2.358s] creating /home/yue/robot/install/piper/share/ament_index/resource_index/packages
+[2.358s] copying resource/piper -> /home/yue/robot/install/piper/share/ament_index/resource_index/packages
+[2.358s] copying package.xml -> /home/yue/robot/install/piper/share/piper
+[2.358s] creating /home/yue/robot/install/piper/share/piper/launch
+[2.361s] copying launch/start_two_piper.launch.py -> /home/yue/robot/install/piper/share/piper/launch
+[2.361s] copying launch/start_single_piper_rviz.launch.py -> /home/yue/robot/install/piper/share/piper/launch
+[2.373s] copying launch/start_single_piper.launch.py -> /home/yue/robot/install/piper/share/piper/launch
+[2.374s] running install_egg_info
+[2.374s] Copying ../../../../build/piper/piper.egg-info to /home/yue/robot/install/piper/lib/python3.10/site-packages/piper-0.0.0-py3.10.egg-info
+[2.375s] running install_scripts
+[2.469s] Installing piper_read_slave_joint script to /home/yue/robot/install/piper/lib/piper
+[2.469s] Installing piper_single_ctrl script to /home/yue/robot/install/piper/lib/piper
+[2.469s] writing list of installed files to '/home/yue/robot/build/piper/install.log'
+[2.542s] Invoked command in '/home/yue/robot/src/Piper_ros/src/piper' returned '0': PYTHONPATH=/home/yue/robot/build/piper/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/piper/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../../build/piper build --build-base /home/yue/robot/build/piper/build install --record /home/yue/robot/build/piper/install.log --single-version-externally-managed install_data

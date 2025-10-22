@@ -1,0 +1,305 @@
+[0.048s] Invoking command in '/home/yue/robot/build/piper_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/yue/robot/src/Piper_ros/src/piper_msgs -DCMAKE_INSTALL_PREFIX=/home/yue/robot/install/piper_msgs
+[0.269s] -- The C compiler identification is GNU 11.4.0
+[0.453s] -- The CXX compiler identification is GNU 11.4.0
+[0.478s] -- Detecting C compiler ABI info
+[0.641s] -- Detecting C compiler ABI info - done
+[0.671s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.744s] -- Detecting C compile features
+[0.746s] -- Detecting C compile features - done
+[0.761s] -- Detecting CXX compiler ABI info
+[0.944s] -- Detecting CXX compiler ABI info - done
+[0.964s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.965s] -- Detecting CXX compile features
+[0.966s] -- Detecting CXX compile features - done
+[1.034s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.413s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.665s] -- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+[1.669s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.674s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.687s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.767s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.564s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[3.105s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.868s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.962s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[3.969s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[4.041s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[4.041s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.042s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[4.042s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[4.095s] -- Found PythonExtra: .so  
+[4.183s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.237s] -- Added test 'lint_cmake' to check CMake code style
+[4.240s] -- Added test 'xmllint' to check XML markup files
+[4.246s] -- Configuring done
+[4.308s] -- Generating done
+[4.328s] -- Build files have been written to: /home/yue/robot/build/piper_msgs
+[4.347s] Invoked command in '/home/yue/robot/build/piper_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/yue/robot/src/Piper_ros/src/piper_msgs -DCMAKE_INSTALL_PREFIX=/home/yue/robot/install/piper_msgs
+[4.352s] Invoking command in '/home/yue/robot/build/piper_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/piper_msgs -- -j6 -l6
+[4.435s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[4.500s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[4.520s] [  4%] Built target ament_cmake_python_copy_piper_msgs
+[5.047s] running egg_info
+[5.048s] creating piper_msgs.egg-info
+[5.049s] writing piper_msgs.egg-info/PKG-INFO
+[5.049s] writing dependency_links to piper_msgs.egg-info/dependency_links.txt
+[5.050s] writing top-level names to piper_msgs.egg-info/top_level.txt
+[5.050s] writing manifest file 'piper_msgs.egg-info/SOURCES.txt'
+[5.055s] reading manifest file 'piper_msgs.egg-info/SOURCES.txt'
+[5.056s] writing manifest file 'piper_msgs.egg-info/SOURCES.txt'
+[5.142s] [  4%] Built target ament_cmake_python_build_piper_msgs_egg
+[5.404s] [ 10%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_c.dir/rosidl_generator_c/piper_msgs/msg/detail/pos_cmd__functions.c.o[0m
+[5.404s] [ 10%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_c.dir/rosidl_generator_c/piper_msgs/msg/detail/piper_status_msg__functions.c.o[0m
+[5.404s] [ 10%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_c.dir/rosidl_generator_c/piper_msgs/srv/detail/enable__functions.c.o[0m
+[5.421s] [ 10%] Built target piper_msgs__cpp
+[5.442s] [ 14%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[5.442s] [ 14%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[5.443s] [ 17%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[5.597s] [ 19%] [32m[1mLinking C shared library libpiper_msgs__rosidl_generator_c.so[0m
+[5.676s] [ 19%] Built target piper_msgs__rosidl_generator_c
+[5.696s] [ 23%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[5.696s] [ 23%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[5.708s] [ 25%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[6.174s] [ 27%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/piper_msgs/msg/piper_status_msg__type_support.cpp.o[0m
+[6.267s] [ 29%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/piper_msgs/msg/detail/piper_status_msg__type_support.cpp.o[0m
+[6.442s] [ 31%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/piper_msgs/msg/piper_status_msg__type_support.cpp.o[0m
+[6.444s] [ 34%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/piper_msgs/msg/detail/dds_fastrtps/piper_status_msg__type_support.cpp.o[0m
+[6.518s] [ 36%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/piper_msgs/msg/pos_cmd__type_support.cpp.o[0m
+[6.541s] [ 38%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/piper_msgs/msg/detail/piper_status_msg__type_support_c.cpp.o[0m
+[6.589s] [ 40%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/piper_msgs/srv/enable__type_support.cpp.o[0m
+[6.654s] [ 42%] [32m[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_c.so[0m
+[6.753s] [ 42%] Built target piper_msgs__rosidl_typesupport_c
+[6.756s] [ 44%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/piper_msgs/msg/detail/piper_status_msg__type_support.c.o[0m
+[6.773s] [ 46%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/piper_msgs/msg/detail/pos_cmd__type_support.c.o[0m
+[6.838s] [ 48%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/piper_msgs/srv/detail/enable__type_support.c.o[0m
+[6.886s] [ 51%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/piper_msgs/msg/detail/dds_fastrtps/pos_cmd__type_support.cpp.o[0m
+[6.970s] [ 53%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/piper_msgs/msg/pos_cmd__type_support.cpp.o[0m
+[6.989s] [ 55%] [32m[1mLinking C shared library libpiper_msgs__rosidl_typesupport_introspection_c.so[0m
+[7.119s] [ 55%] Built target piper_msgs__rosidl_typesupport_introspection_c
+[7.176s] [ 57%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/piper_msgs/srv/enable__type_support.cpp.o[0m
+[7.262s] [ 59%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/piper_msgs/msg/detail/pos_cmd__type_support.cpp.o[0m
+[7.544s] [ 61%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/piper_msgs/msg/detail/pos_cmd__type_support_c.cpp.o[0m
+[7.708s] [ 63%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/piper_msgs/srv/detail/dds_fastrtps/enable__type_support.cpp.o[0m
+[7.728s] [ 65%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/piper_msgs/srv/detail/enable__type_support_c.cpp.o[0m
+[7.941s] [ 68%] [32mBuilding CXX object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/piper_msgs/srv/detail/enable__type_support.cpp.o[0m
+[8.113s] [ 70%] [32m[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_cpp.so[0m
+[8.207s] [ 70%] Built target piper_msgs__rosidl_typesupport_cpp
+[8.535s] [ 72%] [32m[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[8.704s] [ 74%] [32m[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[8.705s] [ 74%] Built target piper_msgs__rosidl_typesupport_fastrtps_c
+[8.871s] [ 74%] Built target piper_msgs__rosidl_typesupport_fastrtps_cpp
+[8.911s] [ 76%] [32m[1mLinking CXX shared library libpiper_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[8.990s] [ 76%] Built target piper_msgs__rosidl_typesupport_introspection_cpp
+[9.034s] [ 76%] Built target piper_msgs
+[9.079s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[10.546s] [ 78%] Built target piper_msgs__py
+[10.596s] [ 82%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_py.dir/rosidl_generator_py/piper_msgs/srv/_enable_s.c.o[0m
+[10.596s] [ 82%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_py.dir/rosidl_generator_py/piper_msgs/msg/_pos_cmd_s.c.o[0m
+[10.599s] [ 85%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_generator_py.dir/rosidl_generator_py/piper_msgs/msg/_piper_status_msg_s.c.o[0m
+[10.846s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/piper_msgs/libpiper_msgs__rosidl_generator_py.so[0m
+[10.933s] [ 87%] Built target piper_msgs__rosidl_generator_py
+[10.973s] [ 91%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[10.973s] [ 91%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[10.976s] [ 93%] [32mBuilding C object CMakeFiles/piper_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[11.195s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[11.195s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[11.198s] [100%] [32m[1mLinking C shared library rosidl_generator_py/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[11.261s] [100%] Built target piper_msgs__rosidl_typesupport_introspection_c__pyext
+[11.261s] [100%] Built target piper_msgs__rosidl_typesupport_c__pyext
+[11.276s] [100%] Built target piper_msgs__rosidl_typesupport_fastrtps_c__pyext
+[11.305s] Invoked command in '/home/yue/robot/build/piper_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/piper_msgs -- -j6 -l6
+[11.329s] Invoking command in '/home/yue/robot/build/piper_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/yue/robot/build/piper_msgs
+[11.344s] -- Install configuration: ""
+[11.345s] -- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/rosidl_interfaces/piper_msgs
+[11.345s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs
+[11.346s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv
+[11.346s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail
+[11.347s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__struct.h
+[11.347s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.h
+[11.347s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__functions.c
+[11.347s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__functions.h
+[11.348s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/enable.h
+[11.348s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg
+[11.348s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail
+[11.349s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__functions.h
+[11.349s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.h
+[11.350s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__functions.c
+[11.350s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.h
+[11.350s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__functions.h
+[11.350s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__struct.h
+[11.351s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__functions.c
+[11.351s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__struct.h
+[11.351s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_generator_c__visibility_control.h
+[11.351s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/pos_cmd.h
+[11.352s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/piper_status_msg.h
+[11.352s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/library_path.sh
+[11.352s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/library_path.dsv
+[11.352s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_c.so
+[11.354s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_c.so" to ""
+[11.354s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs
+[11.354s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv
+[11.355s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail
+[11.355s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_fastrtps_c.h
+[11.355s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg
+[11.355s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail
+[11.355s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_fastrtps_c.h
+[11.355s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_fastrtps_c.h
+[11.355s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[11.356s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_c.so
+[11.356s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[11.356s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs
+[11.356s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv
+[11.357s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail
+[11.357s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.c
+[11.358s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_introspection_c.h
+[11.358s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg
+[11.358s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail
+[11.359s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.c
+[11.359s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_introspection_c.h
+[11.359s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_introspection_c.h
+[11.359s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.c
+[11.359s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[11.359s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_c.so
+[11.359s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_c.so" to ""
+[11.359s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_c.so
+[11.360s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_c.so" to ""
+[11.361s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs
+[11.361s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv
+[11.361s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail
+[11.361s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__builder.hpp
+[11.362s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__struct.hpp
+[11.362s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__traits.hpp
+[11.362s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.hpp
+[11.363s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/enable.hpp
+[11.363s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg
+[11.363s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail
+[11.364s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__traits.hpp
+[11.364s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__builder.hpp
+[11.364s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__struct.hpp
+[11.365s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.hpp
+[11.365s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__struct.hpp
+[11.365s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__builder.hpp
+[11.366s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.hpp
+[11.366s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__traits.hpp
+[11.366s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/piper_status_msg.hpp
+[11.366s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[11.367s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/pos_cmd.hpp
+[11.367s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs
+[11.367s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv
+[11.367s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail
+[11.368s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/dds_fastrtps
+[11.368s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_fastrtps_cpp.hpp
+[11.368s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg
+[11.368s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail
+[11.369s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[11.369s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_fastrtps_cpp.hpp
+[11.369s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/dds_fastrtps
+[11.369s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[11.369s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_cpp.so
+[11.370s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[11.370s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs
+[11.370s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv
+[11.370s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail
+[11.371s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__type_support.cpp
+[11.371s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/srv/detail/enable__rosidl_typesupport_introspection_cpp.hpp
+[11.371s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg
+[11.371s] -- Up-to-date: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail
+[11.371s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__rosidl_typesupport_introspection_cpp.hpp
+[11.372s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/piper_status_msg__type_support.cpp
+[11.372s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__type_support.cpp
+[11.372s] -- Installing: /home/yue/robot/install/piper_msgs/include/piper_msgs/piper_msgs/msg/detail/pos_cmd__rosidl_typesupport_introspection_cpp.hpp
+[11.372s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_cpp.so
+[11.373s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[11.373s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_cpp.so
+[11.373s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_typesupport_cpp.so" to ""
+[11.373s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/pythonpath.sh
+[11.373s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/pythonpath.dsv
+[11.374s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info
+[11.374s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[11.374s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[11.374s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[11.374s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[11.375s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs
+[11.375s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/libpiper_msgs__rosidl_generator_py.so
+[11.375s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[11.375s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv
+[11.376s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/__init__.py
+[11.376s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/_enable.py
+[11.376s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/_enable_s.c
+[11.376s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[11.377s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/__init__.py
+[11.377s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_c.c
+[11.377s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[11.377s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg
+[11.377s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_pos_cmd_s.c
+[11.377s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/__init__.py
+[11.378s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_piper_status_msg.py
+[11.378s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_piper_status_msg_s.c
+[11.378s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_pos_cmd.py
+[11.378s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/_piper_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[11.378s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[11.524s] Listing '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs'...
+[11.525s] Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/__init__.py'...
+[11.525s] Listing '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg'...
+[11.525s] Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/__init__.py'...
+[11.525s] Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_piper_status_msg.py'...
+[11.525s] Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/msg/_pos_cmd.py'...
+[11.525s] Listing '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv'...
+[11.526s] Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/__init__.py'...
+[11.526s] Compiling '/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/srv/_enable.py'...
+[11.537s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[11.537s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+[11.538s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[11.539s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+[11.539s] -- Installing: /home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[11.540s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/local/lib/python3.10/dist-packages/piper_msgs/piper_msgs_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+[11.540s] -- Installing: /home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_py.so
+[11.541s] -- Set runtime path of "/home/yue/robot/install/piper_msgs/lib/libpiper_msgs__rosidl_generator_py.so" to ""
+[11.541s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PiperStatusMsg.idl
+[11.541s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PosCmd.idl
+[11.542s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable.idl
+[11.542s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PiperStatusMsg.msg
+[11.543s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/msg/PosCmd.msg
+[11.543s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable.srv
+[11.543s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable_Request.msg
+[11.544s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/srv/Enable_Response.msg
+[11.544s] -- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/package_run_dependencies/piper_msgs
+[11.544s] -- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/parent_prefix_path/piper_msgs
+[11.545s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/ament_prefix_path.sh
+[11.545s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/ament_prefix_path.dsv
+[11.545s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/path.sh
+[11.546s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/environment/path.dsv
+[11.546s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.bash
+[11.546s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.sh
+[11.547s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.zsh
+[11.547s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/local_setup.dsv
+[11.547s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/package.dsv
+[11.547s] -- Installing: /home/yue/robot/install/piper_msgs/share/ament_index/resource_index/packages/piper_msgs
+[11.548s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_cExport.cmake
+[11.548s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_cExport-noconfig.cmake
+[11.548s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[11.549s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[11.549s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cExport.cmake
+[11.550s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[11.551s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cExport.cmake
+[11.551s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[11.551s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_cppExport.cmake
+[11.552s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[11.552s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[11.552s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[11.553s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[11.553s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cppExport.cmake
+[11.553s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[11.554s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_pyExport.cmake
+[11.555s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/export_piper_msgs__rosidl_generator_pyExport-noconfig.cmake
+[11.555s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/rosidl_cmake-extras.cmake
+[11.555s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.556s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[11.556s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[11.556s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[11.557s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.557s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[11.557s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgsConfig.cmake
+[11.557s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/cmake/piper_msgsConfig-version.cmake
+[11.558s] -- Installing: /home/yue/robot/install/piper_msgs/share/piper_msgs/package.xml
+[11.565s] Invoked command in '/home/yue/robot/build/piper_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/yue/robot/build/piper_msgs

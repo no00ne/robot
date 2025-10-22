@@ -1,0 +1,20 @@
+[1.425s] Invoking command in '/home/yue/robot/src/piper_handpose_controller': CMAKE_PREFIX_PATH=/home/yue/robot/install/piper_msgs:/home/yue/robot/install/piper_with_gripper_moveit:/home/yue/robot/install/piper_no_gripper_moveit:/home/yue/robot/install/piper_mujoco:/home/yue/robot/install/piper_humble:/home/yue/robot/install/piper_gazebo:/home/yue/robot/install/piper_description:/home/yue/robot/install/handpose_publisher PYTHONPATH=/home/yue/robot/build/piper_handpose_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/piper_handpose_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/piper_handpose_controller build --build-base /home/yue/robot/build/piper_handpose_controller/build install --record /home/yue/robot/build/piper_handpose_controller/install.log --single-version-externally-managed install_data
+[1.937s] running egg_info
+[1.939s] writing ../../build/piper_handpose_controller/piper_handpose_controller.egg-info/PKG-INFO
+[1.939s] writing dependency_links to ../../build/piper_handpose_controller/piper_handpose_controller.egg-info/dependency_links.txt
+[1.940s] writing entry points to ../../build/piper_handpose_controller/piper_handpose_controller.egg-info/entry_points.txt
+[1.940s] writing requirements to ../../build/piper_handpose_controller/piper_handpose_controller.egg-info/requires.txt
+[1.940s] writing top-level names to ../../build/piper_handpose_controller/piper_handpose_controller.egg-info/top_level.txt
+[1.945s] reading manifest file '../../build/piper_handpose_controller/piper_handpose_controller.egg-info/SOURCES.txt'
+[1.946s] writing manifest file '../../build/piper_handpose_controller/piper_handpose_controller.egg-info/SOURCES.txt'
+[1.946s] running build
+[1.946s] running build_py
+[1.947s] running install
+[1.948s] running install_lib
+[1.952s] running install_data
+[1.952s] running install_egg_info
+[1.957s] removing '/home/yue/robot/install/piper_handpose_controller/lib/python3.10/site-packages/piper_handpose_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.957s] Copying ../../build/piper_handpose_controller/piper_handpose_controller.egg-info to /home/yue/robot/install/piper_handpose_controller/lib/python3.10/site-packages/piper_handpose_controller-0.0.0-py3.10.egg-info
+[1.959s] running install_scripts
+[2.004s] writing list of installed files to '/home/yue/robot/build/piper_handpose_controller/install.log'
+[2.076s] Invoked command in '/home/yue/robot/src/piper_handpose_controller' returned '0': CMAKE_PREFIX_PATH=/home/yue/robot/install/piper_msgs:/home/yue/robot/install/piper_with_gripper_moveit:/home/yue/robot/install/piper_no_gripper_moveit:/home/yue/robot/install/piper_mujoco:/home/yue/robot/install/piper_humble:/home/yue/robot/install/piper_gazebo:/home/yue/robot/install/piper_description:/home/yue/robot/install/handpose_publisher PYTHONPATH=/home/yue/robot/build/piper_handpose_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yue/robot/install/piper_handpose_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/piper_handpose_controller build --build-base /home/yue/robot/build/piper_handpose_controller/build install --record /home/yue/robot/build/piper_handpose_controller/install.log --single-version-externally-managed install_data

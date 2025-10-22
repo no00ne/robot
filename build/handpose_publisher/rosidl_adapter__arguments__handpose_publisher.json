@@ -1,0 +1,6 @@
+{
+  "package_name": "handpose_publisher",
+  "non_idl_tuples": [
+    "/home/yue/robot/src/handpose_publisher:msg/HandFlange.msg"
+  ]
+}

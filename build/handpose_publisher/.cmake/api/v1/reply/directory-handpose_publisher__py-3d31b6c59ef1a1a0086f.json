@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "handpose_publisher__py",
+		"source" : "/home/yue/robot/build/handpose_publisher/handpose_publisher__py"
+	}
+}

@@ -1,0 +1,27 @@
+[0.351s] Invoking command in '/home/yue/robot/build/handpose_publisher': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/handpose_publisher -- -j6 -l6
+[8.627s] [35m[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_generator_c[0m
+[9.485s] [  3%] Built target handpose_publisher__cpp
+[10.605s] [  3%] Built target ament_cmake_python_copy_handpose_publisher
+[10.614s] [ 12%] Built target handpose_publisher__rosidl_generator_c
+[13.479s] [35m[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_introspection_cpp[0m
+[16.976s] [ 21%] Built target handpose_publisher__rosidl_typesupport_introspection_cpp
+[21.169s] [35m[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_c[0m
+[36.952s] [ 30%] Built target handpose_publisher__rosidl_typesupport_c
+[56.001s] running egg_info
+[56.018s] writing handpose_publisher.egg-info/PKG-INFO
+[56.019s] writing dependency_links to handpose_publisher.egg-info/dependency_links.txt
+[56.021s] writing top-level names to handpose_publisher.egg-info/top_level.txt
+[56.038s] reading manifest file 'handpose_publisher.egg-info/SOURCES.txt'
+[56.040s] writing manifest file 'handpose_publisher.egg-info/SOURCES.txt'
+[56.845s] [ 30%] Built target ament_cmake_python_build_handpose_publisher_egg
+[57.104s] [35m[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_introspection_c[0m
+[57.228s] [ 39%] Built target handpose_publisher__rosidl_typesupport_introspection_c
+[57.304s] [35m[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_fastrtps_c[0m
+[57.557s] [ 48%] Built target handpose_publisher__rosidl_typesupport_fastrtps_c
+[57.731s] [35m[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_fastrtps_cpp[0m
+[58.225s] [ 57%] Built target handpose_publisher__rosidl_typesupport_fastrtps_cpp
+[58.907s] [35m[1mConsolidate compiler generated dependencies of target handpose_publisher__rosidl_typesupport_cpp[0m
+[59.802s] [ 66%] Built target handpose_publisher__rosidl_typesupport_cpp
+[62.082s] [ 66%] Built target handpose_publisher
+[63.898s] [35m[1mConsolidate compiler generated dependencies of target leap_handpose_publisher[0m
+[71.104s] [ 72%] Built target leap_handpose_publisher
