@@ -1,1 +1,0 @@
-Invoking command in '/home/yue/robot/build/handpose_publisher': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/handpose_publisher -- -j6 -l6

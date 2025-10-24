@@ -1,3 +1,0 @@
-[console_scripts]
-handpose_visualizer = handpose_visualizer.visualizer_node:main
-

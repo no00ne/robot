@@ -1,6 +1,0 @@
-Invoking command in '/home/yue/robot/build/piper_humble': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/yue/robot/src/Piper_ros/src/piper_humble -DCMAKE_INSTALL_PREFIX=/home/yue/robot/install/piper_humble
-Invoked command in '/home/yue/robot/build/piper_humble' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/yue/robot/src/Piper_ros/src/piper_humble -DCMAKE_INSTALL_PREFIX=/home/yue/robot/install/piper_humble
-Invoking command in '/home/yue/robot/build/piper_humble': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/piper_humble -- -j6 -l6
-Invoked command in '/home/yue/robot/build/piper_humble' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/yue/robot/build/piper_humble -- -j6 -l6
-Invoking command in '/home/yue/robot/build/piper_humble': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/yue/robot/build/piper_humble
-Invoked command in '/home/yue/robot/build/piper_humble' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/yue/robot/build/piper_humble
