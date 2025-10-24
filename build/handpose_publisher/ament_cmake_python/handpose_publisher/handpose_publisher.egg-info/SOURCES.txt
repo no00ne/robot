@@ -1,6 +1,0 @@
-setup.py
-handpose_publisher/__init__.py
-handpose_publisher.egg-info/PKG-INFO
-handpose_publisher.egg-info/SOURCES.txt
-handpose_publisher.egg-info/dependency_links.txt
-handpose_publisher.egg-info/top_level.txt
