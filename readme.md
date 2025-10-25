@@ -29,7 +29,7 @@ build
 
 ```shell
 
-colcon build --packages-select handpose_interfaces piper_handpose_controller
+colcon build --packages-skip handpose_publisher
 bash src/Piper_ros/can_activate.sh can0 1000000
 # build handpose_interfaces piper_handpose_controller piper(ros2)
 ```

@@ -1,5 +1,0 @@
-source;share/handpose_publisher/local_setup.bash
-source;share/handpose_publisher/local_setup.dsv
-source;share/handpose_publisher/local_setup.ps1
-source;share/handpose_publisher/local_setup.sh
-source;share/handpose_publisher/local_setup.zsh
