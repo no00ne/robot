@@ -9,23 +9,26 @@
   <maintainer email="yue@todo.todo">yue</maintainer>
   <license>MIT</license>
 
-  <!-- Core dependencies -->
+  <!-- Build tool (AMENT build system for Python packages uses ament_python as build type) -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Core runtime dependencies -->
   <depend>rclpy</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
 
-  <!-- Custom message packages -->
+  <!-- Piper & handpose message packages -->
   <depend>piper_msgs</depend>
-  <depend>handpose_publisher</depend>
+  <depend>handpose_interfaces</depend>
 
-  <!-- For TF usage (planned) -->
+  <!-- TF (if later needed) -->
   <depend>tf2_ros</depend>
   <depend>tf2_geometry_msgs</depend>
 
-  <!-- Optional filtering (Python) -->
-  <exec_depend>python3-scipy</exec_depend>
+  <!-- Optional Python numerical/filter libraries (system packages; install via apt) -->
   <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-scipy</exec_depend>
   <exec_depend>python3-filterpy</exec_depend>
 
   <!-- Testing dependencies -->
