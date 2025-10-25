@@ -71,10 +71,6 @@ ament_target_dependencies(leap_handpose_publisher
 
 # Link generated typesupport for handpose_interfaces if available
 # (this makes sure the C++ typesupport library is linked)
-rosidl_get_typesupport_target(rosidl_typesupport_cpp_target handpose_interfaces "rosidl_typesupport_cpp")
-if(DEFINED rosidl_typesupport_cpp_target AND NOT "${rosidl_typesupport_cpp_target}" STREQUAL "")
-  target_link_libraries(leap_handpose_publisher ${rosidl_typesupport_cpp_target})
-endif()
 
 # Link LeapC if found
 if(LEAPC_LIB)

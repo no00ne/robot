@@ -3,484 +3,415 @@
 """
 handpose_controller.py
 
-rclpy node that:
- - subscribes to HandFlange (absolute x,y,z in meters; rx/ry/rz in millideg; pinch_strength; hand_id)
- - subscribes to /end_pose_stamped (PoseStamped) to read current machine endpose (used as machine_origin on new hand_id)
- - performs smoothing/limits/rate-limiting
- - publishes piper pos commands to /pos_cmd (piper_msgs/PosCmd) in Piper units:
-     - position: piper pos unit = 0.001 mm (i.e. meters * 1e6)
-     - orientation: millideg (as provided)
- - publishes /target_pose (PoseStamped) for visualization (position in m, orientation as quaternion)
+Subscribe:  /handpose/flange    (HandFlange)
+            /end_pose_stamped  (geometry_msgs/PoseStamped)  -- for machine origin read at start
+            /enable_flag       (std_msgs/Bool)             -- optional
+Publish:    /pos_cmd           (piper_msgs/PosCmd)
+            /target_pose       (geometry_msgs/PoseStamped) -- for visualization
 """
-
-import rclpy
-from rclpy.node import Node
-from rclpy.duration import Duration
 
 import math
 import time
-import numpy as np
-from collections import deque
+from typing import Optional, Tuple
 
-# ROS msgs
+import rclpy
+from rclpy.node import Node
+from rclpy.time import Time
+from rclpy.duration import Duration
+
 from std_msgs.msg import Bool
-from geometry_msgs.msg import PoseStamped, Pose
-from sensor_msgs.msg import JointState
+from geometry_msgs.msg import PoseStamped, Pose, Quaternion, Point
+from builtin_interfaces.msg import Time as RosTime
 
-# custom msgs (adjust imports to your workspace)
-# Python
-from handpose_interfaces.msg import HandFlange
-from piper_msgs.msg import PosCmd, PiperStatusMsg
+# messages from your workspace (ensure package built & sourced)
+from handpose_publisher.msg import HandFlange
+from piper_msgs.msg import PosCmd
 
-# math helpers
-from scipy.spatial.transform import Rotation as R
+# ---------- helper math: quaternion & euler (xyz order) ----------
 
-# optional kalman
-try:
-    from filterpy.kalman import KalmanFilter
-    HAS_FILTERPY = True
-except Exception:
-    HAS_FILTERPY = False
+def euler_xyz_to_quat(roll: float, pitch: float, yaw: float) -> Tuple[float,float,float,float]:
+    """Convert XYZ (roll,pitch,yaw) in radians to quaternion (x,y,z,w)."""
+    cr = math.cos(roll * 0.5)
+    sr = math.sin(roll * 0.5)
+    cp = math.cos(pitch * 0.5)
+    sp = math.sin(pitch * 0.5)
+    cy = math.cos(yaw * 0.5)
+    sy = math.sin(yaw * 0.5)
 
+    w = cr * cp * cy + sr * sp * sy
+    x = sr * cp * cy - cr * sp * sy
+    y = cr * sp * cy + sr * cp * sy
+    z = cr * cp * sy - sr * sp * cy
+    return (x, y, z, w)
 
-def millideg_to_rad(md):
-    return (md / 1000.0) * math.pi / 180.0
-
-
-def rad_to_millideg(rad):
-    return int(round(rad * 180.0 / math.pi * 1000.0))
-
-
-def map_gripper_units_from_pinch(pinch_strength: float, full_range_mm: float = 100.0) -> int:
-    mm = float(pinch_strength) * full_range_mm
-    inv_mm = full_range_mm - mm
-    units = int(round(inv_mm * 1000.0))  # piper expects 0.001mm units
-    if units < 0:
-        units = 0
-    return units
-
-
-def wrap_angle_md(x):
-    """wrap to [-180000, 180000] millideg"""
-    return int(((int(x) + 180000) % 360000) - 180000)
-
-
-# quaternion helpers
-def quat_from_euler_zyx(rx_rad, ry_rad, rz_rad):
-    # Note: we want ZYX order (rx around X, ry around Y, rz around Z)
-    # scipy's from_euler takes sequence argument; 'xyz' applies rotations around x,y,z in order.
-    # For intrinsic rotations ZYX (rz then ry then rx), we can use 'xyz' with order? Simpler:
-    return R.from_euler('xyz', [rx_rad, ry_rad, rz_rad]).as_quat()  # returns [x,y,z,w]
-
-
-def quat_slerp(q_from, q_to, fraction):
-    r1 = R.from_quat(q_from)
-    r2 = R.from_quat(q_to)
-    return R.slerp(0, 1, [r1, r2])(fraction).as_quat()
-
-
-def quat_normalize(q):
-    q = np.array(q, dtype=float)
-    n = np.linalg.norm(q)
+def quat_normalize(q: Tuple[float,float,float,float]) -> Tuple[float,float,float,float]:
+    x,y,z,w = q
+    n = math.sqrt(x*x + y*y + z*z + w*w)
     if n < 1e-12:
-        return np.array([0.0, 0.0, 0.0, 1.0])
-    return (q / n).tolist()
+        return (0.0, 0.0, 0.0, 1.0)
+    return (x/n, y/n, z/n, w/n)
 
+def quat_dot(a: Tuple[float,float,float,float], b: Tuple[float,float,float,float]) -> float:
+    return a[0]*b[0] + a[1]*b[1] + a[2]*b[2] + a[3]*b[3]
 
-class LowPassFilter:
-    def __init__(self, alpha=0.6):
-        self.alpha = float(alpha)
-        self.pos = None  # np.array (3,)
-        self.quat = None  # [x,y,z,w]
+def quat_inverse(q: Tuple[float,float,float,float]) -> Tuple[float,float,float,float]:
+    x,y,z,w = q
+    # inverse of unit quaternion is conjugate
+    return (-x, -y, -z, w)
 
-    def update(self, pos_m, quat):
-        pos = np.array(pos_m, dtype=float)
-        if self.pos is None:
-            self.pos = pos
-        else:
-            self.pos = self.alpha * pos + (1.0 - self.alpha) * self.pos
+def quat_mul(a: Tuple[float,float,float,float], b: Tuple[float,float,float,float]) -> Tuple[float,float,float,float]:
+    ax,ay,az,aw = a
+    bx,by,bz,bw = b
+    x = aw*bx + ax*bw + ay*bz - az*by
+    y = aw*by - ax*bz + ay*bw + az*bx
+    z = aw*bz + ax*by - ay*bx + az*bw
+    w = aw*bw - ax*bx - ay*by - az*bz
+    return (x,y,z,w)
 
-        if self.quat is None:
-            self.quat = quat_normalize(quat)
-        else:
-            # slerp fraction = alpha (approximate lowpass)
-            try:
-                q_out = quat_slerp(self.quat, quat_normalize(quat), min(max(self.alpha, 0.0), 1.0))
-                self.quat = quat_normalize(q_out)
-            except Exception:
-                # fallback to simple normalized linear interpolation
-                q_lin = self.alpha * np.array(quat) + (1.0 - self.alpha) * np.array(self.quat)
-                self.quat = quat_normalize(q_lin)
+def quat_to_euler_xyz(q: Tuple[float,float,float,float]) -> Tuple[float,float,float]:
+    x,y,z,w = q
+    # roll (X-axis rotation)
+    sinr_cosp = 2.0 * (w * x + y * z)
+    cosr_cosp = 1.0 - 2.0 * (x * x + y * y)
+    roll = math.atan2(sinr_cosp, cosr_cosp)
+    # pitch (Y-axis)
+    sinp = 2.0 * (w * y - z * x)
+    if abs(sinp) >= 1:
+        pitch = math.copysign(math.pi / 2.0, sinp)
+    else:
+        pitch = math.asin(sinp)
+    # yaw (Z-axis)
+    siny_cosp = 2.0 * (w * z + x * y)
+    cosy_cosp = 1.0 - 2.0 * (y * y + z * z)
+    yaw = math.atan2(siny_cosp, cosy_cosp)
+    return (roll, pitch, yaw)
 
-        return self.pos.tolist(), self.quat
+def slerp(a: Tuple[float,float,float,float], b: Tuple[float,float,float,float], t: float) -> Tuple[float,float,float,float]:
+    """Slerp between unit quaternions a->b at fraction t (0..1)."""
+    ax,ay,az,aw = quat_normalize(a)
+    bx,by,bz,bw = quat_normalize(b)
+    dot = quat_dot((ax,ay,az,aw), (bx,by,bz,bw))
+    # If dot < 0, negate b to take shorter path
+    if dot < 0.0:
+        bx,by,bz,bw = -bx, -by, -bz, -bw
+        dot = -dot
+    if dot > 0.9995:
+        # linear interp, then normalize
+        x = ax + t*(bx-ax)
+        y = ay + t*(by-ay)
+        z = az + t*(bz-az)
+        w = aw + t*(bw-aw)
+        return quat_normalize((x,y,z,w))
+    # angle
+    theta_0 = math.acos(max(min(dot,1.0), -1.0))
+    theta = theta_0 * t
+    sin_theta = math.sin(theta)
+    sin_theta_0 = math.sin(theta_0)
+    s0 = math.cos(theta) - dot * sin_theta / sin_theta_0
+    s1 = sin_theta / sin_theta_0
+    x = (s0 * ax) + (s1 * bx)
+    y = (s0 * ay) + (s1 * by)
+    z = (s0 * az) + (s1 * bz)
+    w = (s0 * aw) + (s1 * bw)
+    return (x,y,z,w)
 
+def vec_norm(v):
+    return math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2])
 
-class MovingAverageFilter:
-    def __init__(self, window_size=5):
-        self.window_size = int(window_size)
-        self.pos_q = deque(maxlen=self.window_size)
-        self.quat_q = deque(maxlen=self.window_size)
+def vec_scale(v, s):
+    return (v[0]*s, v[1]*s, v[2]*s)
 
-    def update(self, pos_m, quat):
-        self.pos_q.append(list(pos_m))
-        self.quat_q.append(list(quat))
-        avg_pos = np.mean(np.array(self.pos_q), axis=0).tolist()
-        # quaternion average (component-wise) then normalize (simple)
-        avg_quat = np.mean(np.array(self.quat_q), axis=0)
-        avg_quat = quat_normalize(avg_quat)
-        return avg_pos, avg_quat
+def vec_add(a,b):
+    return (a[0]+b[0], a[1]+b[1], a[2]+b[2])
 
+def vec_sub(a,b):
+    return (a[0]-b[0], a[1]-b[1], a[2]-b[2])
 
-class PoseKalmanFilterWrapper:
-    """Simple kalman for position only; orientation handled by lowpass slerp separately."""
-    def __init__(self, dt=0.05):
-        if not HAS_FILTERPY:
-            raise RuntimeError("filterpy required for Kalman filter")
-        self.kf = KalmanFilter(dim_x=6, dim_z=3)
-        # state: px,py,pz, vx,vy,vz
-        self.kf.x = np.zeros((6, 1))
-        self.kf.F = np.eye(6)
-        self.dt = dt
-        for i in range(3):
-            self.kf.F[i, i+3] = dt
-        self.kf.H = np.zeros((3, 6))
-        self.kf.H[0, 0] = 1.0
-        self.kf.H[1, 1] = 1.0
-        self.kf.H[2, 2] = 1.0
-        self.kf.P *= 1000.0
-        self.kf.R = np.eye(3) * 0.01
-        self.kf.Q = np.eye(6) * 0.01
-
-        self.quat = None
-
-    def update(self, pos_m, quat):
-        z = np.array(pos_m).reshape((3, 1))
-        self.kf.predict()
-        self.kf.update(z)
-        px, py, pz = self.kf.x[0, 0], self.kf.x[1, 0], self.kf.x[2, 0]
-        if self.quat is None:
-            self.quat = quat_normalize(quat)
-        else:
-            # slerp small fraction for orientation
-            q_out = quat_slerp(self.quat, quat_normalize(quat), 0.2)
-            self.quat = quat_normalize(q_out)
-        return [px, py, pz], self.quat
-
+# ---------- Node implementation ----------
 
 class HandposeController(Node):
     def __init__(self):
         super().__init__('handpose_controller')
 
-        # parameters (tunable)
+        # params (tunable)
         self.declare_parameter('hand_topic', '/handpose/flange')
         self.declare_parameter('end_pose_topic', '/end_pose_stamped')
         self.declare_parameter('enable_topic', '/enable_flag')
-        self.declare_parameter('arm_status_topic', '/arm_status')
-        self.declare_parameter('pos_cmd_topic', '/pos_cmd')
-        self.declare_parameter('target_pose_topic', '/target_pose')
-        self.declare_parameter('filter_type', 'low_pass')  # low_pass, moving_avg, kalman
-        self.declare_parameter('alpha', 0.6)
-        self.declare_parameter('ma_window', 5)
-        self.declare_parameter('send_rate_hz', 30)
-        self.declare_parameter('max_lin_vel', 0.25)  # m/s
-        self.declare_parameter('max_ang_deg_per_s', 90.0)  # deg/s
-        self.declare_parameter('hand_timeout_s', 0.5)
-        self.declare_parameter('gripper_full_range_mm', 100.0)
-        self.declare_parameter('piper_unit_scale', 1e6)
+        self.declare_parameter('publish_pos_cmd_topic', '/pos_cmd')
+        self.declare_parameter('publish_target_pose_topic', '/target_pose')
 
-        # read params
+        self.declare_parameter('filter_type', 'low_pass')   # low_pass / moving_avg (moving_avg not implemented here)
+        self.declare_parameter('pos_alpha', 0.35)          # low-pass alpha (0..1)
+        self.declare_parameter('rot_alpha', 0.35)          # quaternion slerp alpha
+        self.declare_parameter('send_hz', 30.0)            # publishing frequency
+        self.declare_parameter('max_lin_vel', 0.5)         # m/s
+        self.declare_parameter('max_ang_deg_s', 90.0)      # deg/s
+        self.declare_parameter('hand_timeout_s', 0.5)      # consider hand lost
+        self.declare_parameter('k_pos', 1.0)               # K_POS mapping (if used)
+        self.declare_parameter('gripper_full_mm', 100.0)   # mm range
+
+        # initial pose in piper units (old script) -> convert to m/rad to publish as initial PosCmd
+        # Note: user required initial EndPoseCtrl(257384, 4793, 147021, -173360, 65070, -169444)
+        self._initial_piper = {
+            'X': 257384,
+            'Y': 4793,
+            'Z': 147021,
+            'RX': -173360,
+            'RY': 65070,
+            'RZ': -169444
+        }
+
+        # load params
         self.hand_topic = self.get_parameter('hand_topic').get_parameter_value().string_value
         self.end_pose_topic = self.get_parameter('end_pose_topic').get_parameter_value().string_value
         self.enable_topic = self.get_parameter('enable_topic').get_parameter_value().string_value
-        self.arm_status_topic = self.get_parameter('arm_status_topic').get_parameter_value().string_value
-        self.pos_cmd_topic = self.get_parameter('pos_cmd_topic').get_parameter_value().string_value
-        self.target_pose_topic = self.get_parameter('target_pose_topic').get_parameter_value().string_value
+        self.pub_pos_cmd_topic = self.get_parameter('publish_pos_cmd_topic').get_parameter_value().string_value
+        self.pub_target_pose_topic = self.get_parameter('publish_target_pose_topic').get_parameter_value().string_value
 
         self.filter_type = self.get_parameter('filter_type').get_parameter_value().string_value
-        self.alpha = float(self.get_parameter('alpha').get_parameter_value().double_value)
-        self.ma_window = int(self.get_parameter('ma_window').get_parameter_value().integer_value)
-        self.send_rate_hz = float(self.get_parameter('send_rate_hz').get_parameter_value().double_value)
+        self.pos_alpha = float(self.get_parameter('pos_alpha').get_parameter_value().double_value)
+        self.rot_alpha = float(self.get_parameter('rot_alpha').get_parameter_value().double_value)
+        self.send_hz = float(self.get_parameter('send_hz').get_parameter_value().double_value)
         self.max_lin_vel = float(self.get_parameter('max_lin_vel').get_parameter_value().double_value)
-        self.max_ang_deg_per_s = float(self.get_parameter('max_ang_deg_per_s').get_parameter_value().double_value)
+        self.max_ang_deg_s = float(self.get_parameter('max_ang_deg_s').get_parameter_value().double_value)
         self.hand_timeout_s = float(self.get_parameter('hand_timeout_s').get_parameter_value().double_value)
-        self.gripper_full_range_mm = float(self.get_parameter('gripper_full_range_mm').get_parameter_value().double_value)
-        self.piper_unit_scale = float(self.get_parameter('piper_unit_scale').get_parameter_value().double_value)
+        self.k_pos = float(self.get_parameter('k_pos').get_parameter_value().double_value)
+        self.gripper_full_mm = float(self.get_parameter('gripper_full_mm').get_parameter_value().double_value)
 
         # internal state
-        self.current_hand_id = None
-        self.last_hand_time = None
-        self.latest_hand_msg = None
-        self.machine_origin_piper = None  # tuple of ints (X,Y,Z,RX,RY,RZ) in piper units
-        self.latest_end_pose = None  # PoseStamped (m + quaternion)
-        self.enabled = True
-        self.arm_ok = True
+        self._last_hand_msg: Optional[HandFlange] = None
+        self._last_hand_time = 0.0
+        self._current_hand_id: Optional[int] = None
+        self._machine_origin_pos: Optional[Tuple[float,float,float]] = None  # m
+        self._machine_origin_time: Optional[float] = None
 
-        # filter instance
-        if self.filter_type == 'moving_avg':
-            self.filter = MovingAverageFilter(window_size=self.ma_window)
-        elif self.filter_type == 'kalman':
-            # if filterpy not available fallback to lowpass
-            if not HAS_FILTERPY:
-                self.get_logger().warn('filterpy not available, falling back to low_pass')
-                self.filter = LowPassFilter(alpha=self.alpha)
-            else:
-                self.filter = PoseKalmanFilterWrapper(dt=1.0/self.send_rate_hz)
+        # filtered state (position in m, quat as x,y,z,w)
+        self._filtered_pos: Optional[Tuple[float,float,float]] = None
+        # default orientation set to identity
+        self._filtered_quat: Tuple[float,float,float,float] = (0.0, 0.0, 0.0, 1.0)
+        self._last_sent_pos: Optional[Tuple[float,float,float]] = None
+        self._last_sent_quat: Tuple[float,float,float,float] = (0.0,0.0,0.0,1.0)
+        self._last_send_time = self.get_clock().now().nanoseconds * 1e-9
+
+        # flags
+        self._enabled = False
+        self._initial_sent = False
+
+        # ROS pub/sub
+        self._sub_hand = self.create_subscription(HandFlange, self.hand_topic, self._cb_hand, 10)
+        self._sub_endpose = self.create_subscription(PoseStamped, self.end_pose_topic, self._cb_endpose, 10)
+        self._sub_enable = self.create_subscription(Bool, self.enable_topic, self._cb_enable, 10)
+
+        self._pub_pos_cmd = self.create_publisher(PosCmd, self.pub_pos_cmd_topic, 10)
+        self._pub_target = self.create_publisher(PoseStamped, self.pub_target_pose_topic, 10)
+
+        # Timer for publish loop
+        period = 1.0 / max(1.0, self.send_hz)
+        self.create_timer(period, self._timer_loop)
+
+        self.get_logger().info(f"Handpose controller started. Subscribing: {self.hand_topic}; publishing: {self.pub_pos_cmd_topic}")
+
+    # ---------- callbacks ----------
+    def _cb_hand(self, msg: HandFlange):
+        # update last hand message and timestamp
+        self._last_hand_msg = msg
+        self._last_hand_time = self.get_clock().now().nanoseconds * 1e-9
+
+        # detect start (new hand_id)
+        if self._current_hand_id is None or msg.hand_id != self._current_hand_id:
+            # start event for new hand
+            old = self._current_hand_id
+            self._current_hand_id = int(msg.hand_id)
+            self.get_logger().info(f"Hand START detected. hand_id {self._current_hand_id} (prev {old})")
+            # set machine_origin from latest end_pose if available (already subscribed)
+            if self._machine_origin_pos is None:
+                self.get_logger().info("No machine_origin set yet; will use latest end_pose when available")
+            # reset filters so first measurement applied cleanly
+            self._filtered_pos = None
+            self._filtered_quat = (0.0,0.0,0.0,1.0)
+            # don't reset last_sent here; will be set on first publish
+        # else: normal update
+
+    def _cb_endpose(self, msg: PoseStamped):
+        # record machine origin in meters
+        p = msg.pose.position
+        self._machine_origin_pos = (float(p.x), float(p.y), float(p.z))
+        self._machine_origin_time = self.get_clock().now().nanoseconds * 1e-9
+        # don't overwrite last_sent unless start occurred; used for origin read
+        #self.get_logger().debug(f"updated machine_origin_pos={self._machine_origin_pos}")
+
+    def _cb_enable(self, msg: Bool):
+        self._enabled = bool(msg.data)
+        self.get_logger().info(f"Enable flag set -> {self._enabled}")
+        if self._enabled and not self._initial_sent:
+            # send initial pose once (converted from piper units)
+            self._send_initial_pose_once()
+
+    # ---------- internal utilities ----------
+    def _send_initial_pose_once(self):
+        # Convert stored piper units to m and millideg -> rad for roll/pitch/yaw
+        p = self._initial_piper
+        x_m = p['X'] * 1e-6
+        y_m = p['Y'] * 1e-6
+        z_m = p['Z'] * 1e-6
+        rx_rad = p['RX'] * (math.pi / 180000.0)
+        ry_rad = p['RY'] * (math.pi / 180000.0)
+        rz_rad = p['RZ'] * (math.pi / 180000.0)
+        pc = PosCmd()
+        pc.x = float(x_m)
+        pc.y = float(y_m)
+        pc.z = float(z_m)
+        pc.roll = float(rx_rad)
+        pc.pitch = float(ry_rad)
+        pc.yaw = float(rz_rad)
+        # gripper set to open moderately (0)
+        pc.gripper = 0.0
+        pc.mode1 = 1
+        pc.mode2 = 0
+        # publish once (only if enabled)
+        if self._enabled:
+            self._pub_pos_cmd.publish(pc)
+            self._initial_sent = True
+            self.get_logger().info(f"Published initial pose to /pos_cmd (m/rad): pos=({x_m:.3f},{y_m:.3f},{z_m:.3f}), rpy(rad)=({rx_rad:.3f},{ry_rad:.3f},{rz_rad:.3f})")
         else:
-            self.filter = LowPassFilter(alpha=self.alpha)
+            self.get_logger().info("Enable flag not set yet; will send initial pose when enabled")
 
-        # publishers and subscribers
-        self.hand_sub = self.create_subscription(HandFlange, self.hand_topic, self.on_hand, 10)
-        self.end_pose_sub = self.create_subscription(PoseStamped, self.end_pose_topic, self.on_end_pose, 10)
-        self.enable_sub = self.create_subscription(Bool, self.enable_topic, self.on_enable, 10)
-        self.arm_status_sub = self.create_subscription(PiperStatusMsg, self.arm_status_topic, self.on_arm_status, 10)
+    def _current_time_s(self):
+        return self.get_clock().now().nanoseconds * 1e-9
 
-        self.pos_cmd_pub = self.create_publisher(PosCmd, self.pos_cmd_topic, 10)
-        self.target_pose_pub = self.create_publisher(PoseStamped, self.target_pose_topic, 10)
-
-        # timer for sending commands
-        self.last_send_time = self.get_clock().now()
-        self.send_timer = self.create_timer(1.0 / max(self.send_rate_hz, 1.0), self.send_loop)
-
-        self.get_logger().info(f'handpose_controller started: hand_topic={self.hand_topic} end_pose_topic={self.end_pose_topic}')
-        self.get_logger().info(f'filter={self.filter_type} alpha={self.alpha} send_rate={self.send_rate_hz}hz')
-
-        # last sent values (for rate limiting)
-        self.last_sent_pos_m = None  # in meters
-        self.last_sent_quat = None  # [x,y,z,w]
-        self.last_sent_rx_md = None
-        self.last_sent_ry_md = None
-        self.last_sent_rz_md = None
-
-    # ---------- subscribers ----------
-    def on_hand(self, msg: HandFlange):
-        # msg.x/y/z are absolute (m)
-        now = self.get_clock().now()
-        self.latest_hand_msg = msg
-        self.last_hand_time = now
-
-        # detect new hand_id -> treat as start event
-        if self.current_hand_id != msg.hand_id:
-            self.get_logger().info(f'New hand_id {msg.hand_id} (prev {self.current_hand_id}) -> start tracking')
-            self.current_hand_id = msg.hand_id
-            # set machine_origin from latest_end_pose if available
-            if self.latest_end_pose is not None:
-                self.machine_origin_piper = self.endpose_to_piper_units(self.latest_end_pose.pose)
-                self.get_logger().info(f'Captured machine_origin from /end_pose_stamped: {self.machine_origin_piper}')
-            else:
-                # no endpose available: fallback to zeros (but warn)
-                self.machine_origin_piper = (0, 0, 0, 0, 0, 0)
-                self.get_logger().warn('No /end_pose_stamped available when new hand started; machine_origin set to zeros.')
-
-    def on_end_pose(self, msg: PoseStamped):
-        # just store the latest end pose for machine_origin lookup
-        self.latest_end_pose = msg
-
-    def on_enable(self, msg: Bool):
-        self.enabled = bool(msg.data)
-        self.get_logger().info(f'enable_flag set to {self.enabled}')
-
-    def on_arm_status(self, msg: PiperStatusMsg):
-        # simple check: if ctrl_mode or arm_status indicates errors set arm_ok False
-        # Here we simply decode arm_status != 0 as warning (tune as needed)
-        if hasattr(msg, 'arm_status'):
-            self.arm_ok = (msg.arm_status == 0)
-            if not self.arm_ok:
-                self.get_logger().warn(f'Arm status abnormal: {msg.arm_status}')
-        else:
-            # unknown message shape -> assume ok
-            self.arm_ok = True
-
-    # ---------- helpers ----------
-    def endpose_to_piper_units(self, pose: Pose):
-        """Convert Pose (m + quaternion) -> piper units (X,Y,Z, RX,RY,RZ) as ints.
-           Pose orientation -> Euler xyz (roll,pitch,yaw) in radians -> degrees -> millideg
-        """
-        x_m = pose.position.x
-        y_m = pose.position.y
-        z_m = pose.position.z
-        # convert quaternion to euler
-        quat = [pose.orientation.x, pose.orientation.y, pose.orientation.z, pose.orientation.w]
-        r = R.from_quat(quat)
-        # note: r.as_euler expects sequence; earlier we used 'xyz' for conversion
-        roll_rad, pitch_rad, yaw_rad = r.as_euler('xyz', degrees=False)
-        roll_deg = math.degrees(roll_rad)
-        pitch_deg = math.degrees(pitch_rad)
-        yaw_deg = math.degrees(yaw_rad)
-        RX_md = int(round(roll_deg * 1000.0))
-        RY_md = int(round(pitch_deg * 1000.0))
-        RZ_md = int(round(yaw_deg * 1000.0))
-        X = int(round(x_m * self.piper_unit_scale))
-        Y = int(round(y_m * self.piper_unit_scale))
-        Z = int(round(z_m * self.piper_unit_scale))
-        return (X, Y, Z, RX_md, RY_md, RZ_md)
-
-    # ---------- send loop ----------
-    def send_loop(self):
-        now = self.get_clock().now()
-        # check tracking timeout
-        if self.latest_hand_msg is None:
-            return
-        if (now - self.last_hand_time).nanoseconds * 1e-9 > self.hand_timeout_s:
-            # hand timed out -> treat as end
-            if self.current_hand_id is not None:
-                self.get_logger().info(f'Hand id {self.current_hand_id} timed out -> stop tracking')
-                self.current_hand_id = None
-                self.latest_hand_msg = None
+    # ---------- main loop ----------
+    def _timer_loop(self):
+        now = self._current_time_s()
+        # check hand timeout
+        if self._last_hand_msg is None:
+            # nothing to do, optionally we could publish last target as keepalive
             return
 
-        if not self.enabled:
-            # do not send to arm, but still publish target_pose for visualization
-            self.publish_target_pose_only(self.latest_hand_msg)
+        # if hand lost for > timeout -> treat as end
+        if now - self._last_hand_time > self.hand_timeout_s:
+            if self._current_hand_id is not None:
+                self.get_logger().info("Hand LOST (timeout) -> clearing current_hand_id and stopping control")
+                self._current_hand_id = None
             return
 
-        if not self.arm_ok:
-            # arm in error -> don't send control commands
-            self.get_logger().warn_once('Arm not OK; not sending pos_cmd')
-            self.publish_target_pose_only(self.latest_hand_msg)
-            return
+        # process latest hand
+        hf = self._last_hand_msg
 
-        # process latest_hand_msg through filter
-        msg = self.latest_hand_msg
-        pos_m = [msg.x, msg.y, msg.z]  # absolute in meters
-        # orientation: provided millideg rx/ry/rz
-        rx_md = int(msg.rx_millideg)
-        ry_md = int(msg.ry_millideg)
-        rz_md = int(msg.rz_millideg)
-        # wrap but keep as-is (upstream already prepared orientation)
-        rx_md = wrap_angle_md(rx_md)
-        ry_md = wrap_angle_md(ry_md)
-        rz_md = wrap_angle_md(rz_md)
+        # 1) position processing - upstream gives absolute position in meters
+        hand_pos = (float(hf.x), float(hf.y), float(hf.z))  # absolute arm-frame meters
 
-        # convert to quaternion (radians)
-        rx_rad = millideg_to_rad(rx_md)
-        ry_rad = millideg_to_rad(ry_md)
-        rz_rad = millideg_to_rad(rz_md)
-        quat = quat_from_euler_zyx(rx_rad, ry_rad, rz_rad)  # returns x,y,z,w
-        quat = quat_normalize(quat)
-
-        # filtering
-        try:
-            filtered_pos, filtered_quat = self.filter.update(pos_m, quat)
-        except Exception as e:
-            self.get_logger().warn(f'Filter error: {e}; using raw')
-            filtered_pos, filtered_quat = pos_m, quat
-
-        # rate limiting relative to last_sent
-        dt = (now - self.last_send_time).nanoseconds * 1e-9
-        if dt <= 0:
-            dt = 1.0 / self.send_rate_hz
-        # linear limit
-        if self.last_sent_pos_m is None:
-            limited_pos = filtered_pos
+        # If you want relative control (old behavior), apply machine_origin:
+        if self._machine_origin_pos is not None and self.k_pos != 1.0:
+            # delta from machine origin in m
+            delta = vec_sub(hand_pos, self._machine_origin_pos)
+            mapped = vec_add(self._machine_origin_pos, vec_scale(delta, self.k_pos))
+            target_pos = mapped
         else:
-            delta = np.array(filtered_pos) - np.array(self.last_sent_pos_m)
-            dist = np.linalg.norm(delta)
-            max_step = self.max_lin_vel * dt
-            if dist > max_step and max_step > 0:
-                limited_pos = (np.array(self.last_sent_pos_m) + delta * (max_step / dist)).tolist()
-            else:
-                limited_pos = filtered_pos
+            target_pos = hand_pos
 
-        # angular limit via slerp
-        if self.last_sent_quat is None:
-            limited_quat = filtered_quat
+        # 2) orientation: hf.rx_millideg etc are millideg -> convert to radians (rad)
+        # Note: HF is provided as ZYX millideg? In our earlier assumption it's RX/RY/RZ as roll/pitch/yaw (X/Y/Z)
+        rx_rad = float(hf.rx_millideg) * (math.pi / 180000.0)
+        ry_rad = float(hf.ry_millideg) * (math.pi / 180000.0)
+        rz_rad = float(hf.rz_millideg) * (math.pi / 180000.0)
+        # convert to quaternion (XYZ order)
+        new_quat = euler_xyz_to_quat(rx_rad, ry_rad, rz_rad)
+        new_quat = quat_normalize(new_quat)
+
+        # 3) gripper mapping (pinch_strength 0..1 -> piper gripper m)
+        pinch = max(0.0, min(1.0, float(getattr(hf, 'pinch_strength', 0.0))))
+        # old mapping: mm = pinch * GRIPPER_FULL_RANGE_MM; inv_mm = full - mm; units = inv_mm * 1000 (piper unit)
+        # For pos_cmd.gripper we send meters: inv_mm/1000
+        inv_mm = (self.gripper_full_mm * (1.0 - pinch))
+        gripper_m = max(0.0, inv_mm / 1000.0)
+        # clamp to reasonable machine range (0..0.08)
+        if gripper_m > 0.08:
+            gripper_m = 0.08
+
+        # 4) filtering: position low-pass; orientation slerp
+        if self._filtered_pos is None:
+            # initialize filters on first measurement
+            self._filtered_pos = target_pos
+            self._filtered_quat = new_quat
+            # set last_sent similarly if not set
+            if self._last_sent_pos is None:
+                self._last_sent_pos = target_pos
         else:
-            # compute angle between quaternions
-            q_from = R.from_quat(self.last_sent_quat)
-            q_to = R.from_quat(filtered_quat)
-            # relative rotation
-            q_rel = q_from.inv() * q_to
-            angle = 2.0 * math.acos(max(-1.0, min(1.0, q_rel.as_quat()[3])))  # angle in rad (note: as_quat returns x,y,z,w)
-            max_ang_rad = math.radians(self.max_ang_deg_per_s) * dt
-            if angle > 1e-9 and angle > max_ang_rad and max_ang_rad > 0:
-                frac = max_ang_rad / angle
-                r_slerp = R.slerp(0, 1, [q_from, q_to])(frac)
-                limited_quat = r_slerp.as_quat()
-            else:
-                limited_quat = filtered_quat
+            a = self.pos_alpha
+            fp = (a * target_pos[0] + (1-a) * self._filtered_pos[0],
+                  a * target_pos[1] + (1-a) * self._filtered_pos[1],
+                  a * target_pos[2] + (1-a) * self._filtered_pos[2])
+            self._filtered_pos = fp
+            fq = slerp(self._filtered_quat, new_quat, self.rot_alpha)
+            self._filtered_quat = quat_normalize(fq)
 
-        # prepare piper pos units and millideg
-        piper_X = int(round(limited_pos[0] * self.piper_unit_scale))
-        piper_Y = int(round(limited_pos[1] * self.piper_unit_scale))
-        piper_Z = int(round(limited_pos[2] * self.piper_unit_scale))
+        # 5) rate limiting: limit linear and angular step based on elapsed time since last send
+        dt = max(1e-6, now - self._last_send_time)
+        # linear
+        delta_pos = vec_sub(self._filtered_pos, self._last_sent_pos) if self._last_sent_pos is not None else (0.0,0.0,0.0)
+        dist = vec_norm(delta_pos)
+        max_step = self.max_lin_vel * dt
+        if dist > max_step and dist > 1e-12:
+            scale = max_step / dist
+            delta_pos = vec_scale(delta_pos, scale)
+        new_send_pos = vec_add(self._last_sent_pos, delta_pos) if self._last_sent_pos is not None else self._filtered_pos
 
-        # For RPY millideg we use the incoming millideg (no change) but we should recompute from limited_quat
-        # to keep orientation and limited_quat consistent we compute euler from limited_quat
-        r_lim = R.from_quat(limited_quat)
-        roll_rad, pitch_rad, yaw_rad = r_lim.as_euler('xyz', degrees=False)
-        RX_md_lim = int(round(math.degrees(roll_rad) * 1000.0))
-        RY_md_lim = int(round(math.degrees(pitch_rad) * 1000.0))
-        RZ_md_lim = int(round(math.degrees(yaw_rad) * 1000.0))
+        # angular: compute angle between last_sent_quat and filtered_quat
+        # delta_q = q_last^{-1} * q_new ; angle = 2*acos(w)
+        dq = quat_mul(quat_inverse(self._last_sent_quat), self._filtered_quat)
+        # normalize
+        dq = quat_normalize(dq)
+        angle = 2.0 * math.acos(max(min(dq[3], 1.0), -1.0))  # in rad
+        max_ang = (self.max_ang_deg_s * math.pi / 180.0) * dt
+        if angle > max_ang and angle > 1e-8:
+            frac = max_ang / angle
+            new_send_quat = slerp(self._last_sent_quat, self._filtered_quat, frac)
+        else:
+            new_send_quat = self._filtered_quat
 
-        # gripper mapping
-        gripper_units = map_gripper_units_from_pinch(float(msg.pinch_strength), self.gripper_full_range_mm)
+        # 6) send PosCmd if enabled
+        if self._enabled:
+            pc = PosCmd()
+            pc.x = float(new_send_pos[0])
+            pc.y = float(new_send_pos[1])
+            pc.z = float(new_send_pos[2])
+            # convert quaternion to euler XYZ in radians
+            r,p,y = quat_to_euler_xyz(new_send_quat)
+            pc.roll = float(r)
+            pc.pitch = float(p)
+            pc.yaw = float(y)
+            pc.gripper = float(gripper_m)
+            pc.mode1 = 1
+            pc.mode2 = 0
+            try:
+                self._pub_pos_cmd.publish(pc)
+            except Exception as e:
+                self.get_logger().warning(f"Failed publish /pos_cmd: {e}")
 
-        # create PosCmd and publish
-        pos_cmd = PosCmd()
-        pos_cmd.x = float(piper_X)  # piper expects numbers in their message; driver will interpret units
-        pos_cmd.y = float(piper_Y)
-        pos_cmd.z = float(piper_Z)
-        # NOTE: The README indicates PosCmd.roll/pitch/yaw are float64. We put millideg values here per your confirmation.
-        pos_cmd.roll = float(RX_md_lim)
-        pos_cmd.pitch = float(RY_md_lim)
-        pos_cmd.yaw = float(RZ_md_lim)
-        pos_cmd.gripper = int(gripper_units)
-        pos_cmd.mode1 = 0
-        pos_cmd.mode2 = 0
+            # publish visualization PoseStamped
+            ps = PoseStamped()
+            ps.header.stamp = self.get_clock().now().to_msg()
+            ps.header.frame_id = 'piper_base'
+            ps.pose.position = Point(x=new_send_pos[0], y=new_send_pos[1], z=new_send_pos[2])
+            qx,qy,qz,qw = new_send_quat
+            ps.pose.orientation = Quaternion(x=qx, y=qy, z=qz, w=qw)
+            try:
+                self._pub_target.publish(ps)
+            except Exception:
+                pass
 
-        try:
-            self.pos_cmd_pub.publish(pos_cmd)
-        except Exception as e:
-            self.get_logger().error(f'Failed to publish pos_cmd: {e}')
+            # update last_sent
+            self._last_sent_pos = new_send_pos
+            self._last_sent_quat = new_send_quat
+            self._last_send_time = now
 
-        # publish /target_pose for visualization (position in m, orientation quaternion)
-        pose_msg = PoseStamped()
-        pose_msg.header.stamp = now.to_msg()
-        pose_msg.header.frame_id = 'piper_base'
-        pose_msg.pose.position.x = limited_pos[0]
-        pose_msg.pose.position.y = limited_pos[1]
-        pose_msg.pose.position.z = limited_pos[2]
-        pose_msg.pose.orientation.x = float(limited_quat[0])
-        pose_msg.pose.orientation.y = float(limited_quat[1])
-        pose_msg.pose.orientation.z = float(limited_quat[2])
-        pose_msg.pose.orientation.w = float(limited_quat[3])
-        try:
-            self.target_pose_pub.publish(pose_msg)
-        except Exception as e:
-            self.get_logger().error(f'Failed to publish target_pose: {e}')
-
-        # update last sent
-        self.last_sent_pos_m = limited_pos
-        self.last_sent_quat = limited_quat
-        self.last_sent_rx_md = RX_md_lim
-        self.last_sent_ry_md = RY_md_lim
-        self.last_sent_rz_md = RZ_md_lim
-        self.last_send_time = now
-
-    def publish_target_pose_only(self, hand_msg: HandFlange):
-        # Publish only `/target_pose` for visualization without sending commands
-        rx_md = int(hand_msg.rx_millideg)
-        ry_md = int(hand_msg.ry_millideg)
-        rz_md = int(hand_msg.rz_millideg)
-        rx_rad = millideg_to_rad(rx_md)
-        ry_rad = millideg_to_rad(ry_md)
-        rz_rad = millideg_to_rad(rz_md)
-        quat = quat_from_euler_zyx(rx_rad, ry_rad, rz_rad)
-        pose_msg = PoseStamped()
-        pose_msg.header.stamp = self.get_clock().now().to_msg()
-        pose_msg.header.frame_id = 'piper_base'
-        pose_msg.pose.position.x = float(hand_msg.x)
-        pose_msg.pose.position.y = float(hand_msg.y)
-        pose_msg.pose.position.z = float(hand_msg.z)
-        pose_msg.pose.orientation.x = float(quat[0])
-        pose_msg.pose.orientation.y = float(quat[1])
-        pose_msg.pose.orientation.z = float(quat[2])
-        pose_msg.pose.orientation.w = float(quat[3])
-        try:
-            self.target_pose_pub.publish(pose_msg)
-        except Exception as e:
-            self.get_logger().error(f'Failed to publish target_pose (only): {e}')
-
+            # debug log (throttled)
+            # self.get_logger().debug(f"Published PosCmd x={pc.x:.3f} y={pc.y:.3f} z={pc.z:.3f} roll={pc.roll:.3f}")
+        else:
+            # not enabled: do nothing; but update last_sent to filtered to avoid jump on enable
+            self._last_sent_pos = self._filtered_pos
+            self._last_sent_quat = self._filtered_quat
+            self._last_send_time = now
 
 def main(args=None):
     rclpy.init(args=args)
@@ -488,11 +419,10 @@ def main(args=None):
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        node.get_logger().info('KeyboardInterrupt, shutting down')
+        pass
     finally:
         node.destroy_node()
         rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()
