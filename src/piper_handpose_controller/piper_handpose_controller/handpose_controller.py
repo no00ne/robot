@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-handpose_controller.py
-订阅:  /handpose/flange (handpose_interfaces/HandFlange)
-       /end_pose_stamped (geometry_msgs/PoseStamped)
-       /enable_flag (std_msgs/Bool)
-发布:  /pos_cmd (piper_msgs/PosCmd) -- 位置单位 m, 角度 rad, gripper m
-       /target_pose (geometry_msgs/PoseStamped) -- 可视化
-首次 enable 时会发布一次 initial pose（由旧脚本的 piper 单位转换而来）
-简单低通 (位置) + slerp (姿态) + 速率限制
+handpose_controller.py  (startup-enable variant)
+
+行为：
+- 节点启动后 **立即发布 /enable_flag = True**，并只发送一次 initial pose（从旧 Piper 单位转换）。
+- 之后不会再修改 /enable_flag（不会在 hand start/stop 时切换）。
+- 订阅：/handpose/flange (handpose_interfaces/HandFlange)、/end_pose_stamped (geometry_msgs/PoseStamped)
+- 发布：/enable_flag (std_msgs/Bool)、/pos_cmd (piper_msgs/PosCmd)、/target_pose (geometry_msgs/PoseStamped)
+- 当检测到新的 hand（hand_id 变化）时记录 `hand_origin`（手出现时的位置）并快照 `machine_origin_at_hand_start`
+ （若 end_pose_stamped 当时可用）；映射使用：
+      target_pos = machine_origin_at_hand_start + k_pos * (hand_pos_now - hand_origin)
+  若两者未同时可用则回退到使用 hand 的绝对位置（m）。
+- 仍有位置低通、姿态 slerp 与线速度 / 角速度速率限制，保持旧实现风格。
+- 保存路径：src/piper_handpose_controller/piper_handpose_controller/handpose_controller.py
 """
+
 import math
 from typing import Optional, Tuple
 
@@ -97,9 +103,9 @@ class HandposeController(Node):
         # params
         self.declare_parameter('hand_topic', '/handpose/flange')
         self.declare_parameter('end_pose_topic', '/end_pose_stamped')
-        self.declare_parameter('enable_topic', '/enable_flag')
         self.declare_parameter('pos_cmd_topic', '/pos_cmd')
         self.declare_parameter('target_pose_topic', '/target_pose')
+        self.declare_parameter('enable_topic', '/enable_flag')
 
         self.declare_parameter('pos_alpha', 0.35)
         self.declare_parameter('rot_alpha', 0.35)
@@ -110,15 +116,15 @@ class HandposeController(Node):
         self.declare_parameter('k_pos', 1.0)
         self.declare_parameter('gripper_full_mm', 100.0)
 
-        # initial piper pose (old script piper units) -> will be sent once on enable
+        # initial piper pose (old script piper units) -> will be sent once at startup
         self._initial_piper = {'X':257384,'Y':4793,'Z':147021,'RX':-173360,'RY':65070,'RZ':-169444}
 
         # load params
         self.hand_topic = self.get_parameter('hand_topic').get_parameter_value().string_value
         self.end_pose_topic = self.get_parameter('end_pose_topic').get_parameter_value().string_value
-        self.enable_topic = self.get_parameter('enable_topic').get_parameter_value().string_value
         self.pos_cmd_topic = self.get_parameter('pos_cmd_topic').get_parameter_value().string_value
         self.target_pose_topic = self.get_parameter('target_pose_topic').get_parameter_value().string_value
+        self.enable_topic = self.get_parameter('enable_topic').get_parameter_value().string_value
 
         self.pos_alpha = float(self.get_parameter('pos_alpha').get_parameter_value().double_value)
         self.rot_alpha = float(self.get_parameter('rot_alpha').get_parameter_value().double_value)
@@ -133,7 +139,13 @@ class HandposeController(Node):
         self._last_hand_msg: Optional[HandFlange] = None
         self._last_hand_time = 0.0
         self._current_hand_id: Optional[int] = None
+
+        # machine origin = latest /end_pose_stamped (updates frequently from driver)
         self._machine_origin_pos: Optional[Tuple[float,float,float]] = None
+        # snapshot of machine origin at the moment of hand START (used with hand_origin)
+        self._machine_origin_at_hand_start: Optional[Tuple[float,float,float]] = None
+        # hand origin = hand position at the moment hand START (m)
+        self._hand_origin: Optional[Tuple[float,float,float]] = None
 
         self._filtered_pos: Optional[Tuple[float,float,float]] = None
         self._filtered_quat = (0.0,0.0,0.0,1.0)
@@ -141,13 +153,16 @@ class HandposeController(Node):
         self._last_sent_quat = (0.0,0.0,0.0,1.0)
         self._last_send_time = self.get_clock().now().nanoseconds * 1e-9
 
-        self._enabled = False
+        # Our published enable state (we publish Bool to driver) — set at startup
+        self._published_enable_state = False
+        # Whether we've published the initial pos after enabling
         self._initial_sent = False
 
         # subs/pubs
         self.create_subscription(HandFlange, self.hand_topic, self._cb_hand, 10)
         self.create_subscription(PoseStamped, self.end_pose_topic, self._cb_endpose, 10)
-        self.create_subscription(Bool, self.enable_topic, self._cb_enable, 10)
+        # IMPORTANT: driver subscribes /enable_flag, so we create a publisher
+        self._pub_enable = self.create_publisher(Bool, self.enable_topic, 10)
 
         self._pub_pos = self.create_publisher(PosCmd, self.pos_cmd_topic, 10)
         self._pub_target = self.create_publisher(PoseStamped, self.target_pose_topic, 10)
@@ -155,14 +170,20 @@ class HandposeController(Node):
         period = 1.0 / max(1.0, self.send_hz)
         self.create_timer(period, self._timer_loop)
 
-        self.get_logger().info("handpose_controller started: subscribe %s publish %s" % (self.hand_topic, self.pos_cmd_topic))
+        self.get_logger().info("handpose_controller started: subscribe %s publish %s (enable -> %s)" %
+                               (self.hand_topic, self.pos_cmd_topic, self.enable_topic))
+
+        # --- NEW BEHAVIOR: immediately publish enable True and send initial pose ONCE ---
+        # publish enable true now (driver started with auto_enable=false will receive this)
+        self._publish_enable(True)
+        self._send_initial_pose_once()
+        # After this point we WILL NOT flip enable_flag again from this node.
 
     # callbacks
     def _cb_hand(self, msg: HandFlange):
-        # store last message
+        # store last message and update hand id/time; do NOT toggle enable here
         self._last_hand_msg = msg
         self._last_hand_time = self.get_clock().now().nanoseconds * 1e-9
-        # detect new hand (start)
         if self._current_hand_id is None or int(msg.hand_id) != int(self._current_hand_id):
             old = self._current_hand_id
             self._current_hand_id = int(msg.hand_id)
@@ -170,19 +191,38 @@ class HandposeController(Node):
             # reset filters
             self._filtered_pos = None
             self._filtered_quat = (0.0,0.0,0.0,1.0)
+            # record hand_origin (absolute m)
+            self._hand_origin = (float(msg.x), float(msg.y), float(msg.z))
+            # snapshot machine origin at this start time if available
+            if self._machine_origin_pos is not None:
+                self._machine_origin_at_hand_start = self._machine_origin_pos
+                self.get_logger().info(f"Recorded hand_origin={self._hand_origin}, machine_origin_at_hand_start={self._machine_origin_at_hand_start}")
+            else:
+                self._machine_origin_at_hand_start = None
+                self.get_logger().info(f"Recorded hand_origin={self._hand_origin}, machine_origin_at_hand_start not yet available")
 
     def _cb_endpose(self, msg: PoseStamped):
         p = msg.pose.position
         self._machine_origin_pos = (float(p.x), float(p.y), float(p.z))
-
-    def _cb_enable(self, msg: Bool):
-        self._enabled = bool(msg.data)
-        self.get_logger().info(f"Enable flag -> {self._enabled}")
-        if self._enabled and not self._initial_sent:
-            self._send_initial_pose_once()
+        # If we previously recorded a hand_origin but machine snapshot was None, sample it now
+        if self._hand_origin is not None and self._machine_origin_at_hand_start is None:
+            self._machine_origin_at_hand_start = self._machine_origin_pos
+            self.get_logger().info(f"Backfilled machine_origin_at_hand_start={self._machine_origin_at_hand_start} for existing hand_origin")
 
     # internal
+    def _publish_enable(self, enable: bool):
+        try:
+            b = Bool()
+            b.data = bool(enable)
+            self._pub_enable.publish(b)
+            self._published_enable_state = bool(enable)
+            self.get_logger().info(f"Published enable_flag -> {self._published_enable_state}")
+        except Exception as e:
+            self.get_logger().warn("Failed to publish enable_flag: %s" % str(e))
+
     def _send_initial_pose_once(self):
+        if self._initial_sent:
+            return
         p = self._initial_piper
         x_m = p['X'] * 1e-6
         y_m = p['Y'] * 1e-6
@@ -192,7 +232,7 @@ class HandposeController(Node):
         rz = p['RZ'] * (math.pi / 180000.0)
         pc = PosCmd()
         pc.x = float(x_m); pc.y = float(y_m); pc.z = float(z_m)
-        pc.roll = float(rx); pc.pitch = float(ry); pc.yaw = float(rz)
+        pc.roll = float(rx); pc.pitch = float(ry); pc.yaw = float(rz)-1
         pc.gripper = 0.0
         pc.mode1 = 1; pc.mode2 = 0
         try:
@@ -208,27 +248,35 @@ class HandposeController(Node):
     # main loop
     def _timer_loop(self):
         now = self._now_s()
+
+        # if no hand yet, nothing else to do (we still keep published_enable_state True)
         if self._last_hand_msg is None:
             return
+
+        # check hand timeout: we won't change enable_flag, but we clear local hand id when lost
         if now - self._last_hand_time > self.hand_timeout_s:
             if self._current_hand_id is not None:
                 self.get_logger().info("Hand LOST (timeout) -> clearing current hand")
                 self._current_hand_id = None
+                self._hand_origin = None
+                self._machine_origin_at_hand_start = None
             return
 
         hf = self._last_hand_msg
         # absolute hand pos from upstream (m)
         hand_pos = (float(hf.x), float(hf.y), float(hf.z))
 
-        # mapping / optional scaling around machine origin
-        if self._machine_origin_pos is not None and self.k_pos != 1.0:
-            delta = vec_sub(hand_pos, self._machine_origin_pos)
-            mapped = vec_add(self._machine_origin_pos, vec_scale(delta, self.k_pos))
+        # Correct mapping: use snapshot at hand start + k_pos * (hand_now - hand_origin)
+        if self._machine_origin_at_hand_start is not None and self._hand_origin is not None:
+            delta_hand = vec_sub(hand_pos, self._hand_origin)
+            mapped = vec_add(self._machine_origin_at_hand_start, vec_scale(delta_hand, self.k_pos))
             target_pos = mapped
         else:
+            # fallback: use absolute hand pos (m)
             target_pos = hand_pos
 
-        # orientation: upstream provides millideg RX/RY/RZ (ZYX in publisher), treat as XYZ euler here as earlier code did
+        # orientation: upstream provides millideg RX/RY/RZ (ZYX in publisher),
+        # treat as XYZ euler here as earlier code did
         rx_rad = float(hf.rx_millideg) * (math.pi / 180000.0)
         ry_rad = float(hf.ry_millideg) * (math.pi / 180000.0)
         rz_rad = float(hf.rz_millideg) * (math.pi / 180000.0)
@@ -274,8 +322,8 @@ class HandposeController(Node):
         else:
             new_send_quat = self._filtered_quat
 
-        # publish if enabled
-        if self._enabled:
+        # publish if we've published enable True at startup
+        if self._published_enable_state:
             pc = PosCmd()
             pc.x = float(new_send_pos[0]); pc.y = float(new_send_pos[1]); pc.z = float(new_send_pos[2])
             r,p,y = quat_to_euler_xyz(new_send_quat)
@@ -302,7 +350,7 @@ class HandposeController(Node):
             self._last_sent_quat = new_send_quat
             self._last_send_time = now
         else:
-            # not enabled: update last_sent to filtered to avoid jump on enable
+            # not enabled: update last_sent to filtered to avoid jump (shouldn't occur since we enabled at startup)
             self._last_sent_pos = self._filtered_pos
             self._last_sent_quat = self._filtered_quat
             self._last_send_time = now

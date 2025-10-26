@@ -30,7 +30,7 @@ build
 ```shell
 
 colcon build --packages-skip handpose_publisher
-bash src/Piper_ros/can_activate.sh can0 1000000
+bash src/piper_ros-humble/can_activate.sh can0 1000000
 # build handpose_interfaces piper_handpose_controller piper(ros2)
 ```
 
@@ -53,3 +53,13 @@ ros2 run piper_handpose_controller handpose_controller
 ```shell
 ros2 run piper_handpose_controller handpose_controller --ros-args -p pos_alpha:=0.25 -p max_lin_vel:=0.2
 ```
+```shell
+rm -rf build/ install/ log/
+```
+ros2 run piper piper_single_ctrl --ros-args -p can_port:=can0 -p auto_enable:=true -p gripper_exist:=true -p gripper_val_mutiple:=2
+
+ros2 topic pub /pos_cmd piper_msgs/msg/PosCmd "{x: 0.277384, y: 0.004793, z: 0.147021, roll: -3.0219, pitch: 1.1359, yaw: -2.9559, gripper: 0.0, mode1: 0, mode2: 0}" --once
+
+rx_millideg: -163263
+ry_millideg: 42155
+rz_millideg: -120099
